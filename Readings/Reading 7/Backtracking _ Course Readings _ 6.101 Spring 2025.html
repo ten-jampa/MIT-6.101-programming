@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li, .ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {display: list-item; border-bottom: 1px solid silver; padding-left: 0.5em; opacity: 0.7;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; height: 100%; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ2 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #777;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ3 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #444;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 400px; box-sizing: border-box;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left-narrow {right: 30px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right-narrow {left: 30px;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; display: inline-block; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6; box-sizing: content-box;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100; box-sizing: border-box;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ5 {color: #404740;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style>
+<!-- This page was generated by CAT-SOOP 19.0.6+hg.14.f36ce1d1.  miau. -->
+<meta charset="utf-8">
+<title>Backtracking | Course Readings | 6.101 Spring 2025</title>
+<link href="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/logo.gif" rel="icon" type="image/gif">
+<!-- include catsoop base css -->
+<link href="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/base.css" rel="stylesheet" type="text/css">
+<!-- set up JS namespace for catsoop -->
+<script type="text/javascript">
+    // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+    var catsoop = {plugins: {}};
+
+    function toggleResponsiveHeader(){
+        document.getElementsByTagName('header')[0].classList.toggle('responsive');
+    }
+
+    function toggleAttribute(elt, attr){
+        elt.setAttribute(attr, elt.getAttribute(attr) === "true" ? "false" : "true");
+    }
+
+    catsoop.topMenuFocus = function(event) {
+        var elt = event.target;
+        var target = event.relatedTarget;
+        if (elt.classList.contains('menu-submenu')){
+            var topmenu = elt.parentNode.parentNode;
+            if (target && !target.classList.contains("menu-submenu") && target !== topmenu.children[1]) {
+                clearMenu(topmenu);
+            }
+        }else if (!target.classList.contains('cs_top_menu_item')){
+            clearMenu(elt.parentNode);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+        var menu_boxes = document.getElementsByClassName('dropdown-checkbox');
+        for(var i=0; i<menu_boxes.length; i++){
+            menu_boxes[i].checked = false;
+        }
+    });
+
+    function clearMenu(menu){
+       menu.children[1].checked = false;
+    }
+    // @license-end
+    </script>
+<!-- dark mode -->
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/darkreader.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+    catsoop.dark_mode_settings = null;
+    if (catsoop.dark_mode_settings === null){
+        catsoop.dark_mode_settings = JSON.parse(localStorage.getItem('catsoop_dark_mode_settings'));
+        if (catsoop.dark_mode_settings === null){
+            catsoop.dark_mode_settings = {'mode': 'disabled', 'brightness': 100, 'contrast': 90, 'sepia': 10, 'grayscale': 0};
+        }
+    }
+    localStorage.setItem('catsoop_dark_mode_settings', JSON.stringify(catsoop.dark_mode_settings));
+    catsoop.dark_mode = catsoop.dark_mode_settings.mode;
+    delete catsoop.dark_mode_settings.mode;
+    if (catsoop.dark_mode === 'enabled' || catsoop.dark_mode === 'auto'){
+        DarkReader[catsoop.dark_mode == 'enabled' ? 'enable' : 'auto'](catsoop.dark_mode_settings);
+    }
+    
+    document.addEventListener("DOMContentLoaded", function(event) {
+        if (DarkReader.isEnabled()) {
+            var invertfilter = 'invert(100%) hue-rotate(180deg)' +
+                               ' brightness(' + catsoop.dark_mode_settings.brightness + '%)' +
+                               ' contrast(' + catsoop.dark_mode_settings.contrast + '%)' +
+                               ' grayscale(' + catsoop.dark_mode_settings.grayscale + '%)' +
+                               ' sepia(' + catsoop.dark_mode_settings.sepia + '%)'
+            var inverter = document.createElement('style');
+            inverter.innerText = 'img.catsoop-darkmode-invert, video.catsoop-darkmode-invert {filter: ' + invertfilter + ';}\n\n'
+            document.head.appendChild(inverter);
+        }
+    });
+    // @license-end
+    </script>
+<!-- load in mathjax and CAT-SOOP-specific math rendering  -->
+<script type="text/javascript">
+    // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+    MathJax = {
+      startup: {
+        typeset: false,
+      }
+    }
+
+    catsoop.render_math = function (elt) {
+        if(elt.classList.contains('cs_displaymath')){
+            var b = "\\[";
+            var e = "\\]";
+        }else{
+            var b = "\\(";
+            var e = "\\)";
+        }
+        elt.innerText = b + elt.innerText + e;
+        MathJax.typeset([elt]);
+        elt.classList.remove('cs_math_to_render');
+    }
+
+
+    catsoop.render_all_math = function (elt){
+        if (elt === null) {
+            return;
+        }
+        var mathelts = elt.getElementsByClassName('cs_math_to_render');
+        while(mathelts.length > 0){
+            catsoop.render_math(mathelts[0]);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+          catsoop.render_all_math(document);
+    });
+    // @license-end
+    </script>
+<script id="MathJax-script" src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/tex-chtml-full-speech.js"></script><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style>
+<!-- load in diagram stuff -->
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/cs_diagrams.js" type="text/javascript"></script>
+<script type="text/javascript">
+        catsoop.diagram_sources = {};
+    </script>
+<!-- Syntax Highlighting -->
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/highlight.min.js" type="text/javascript"></script>
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/highlightjs-line-numbers.js" type="text/javascript"></script><style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style>
+<script type="text/javascript">
+    // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+    catsoop.syntax_highlighting = function (elt) {
+        if (elt === null) {
+            return;
+        }
+        elt.querySelectorAll('pre > code:not(.highlighted)').forEach((block) => {
+            hljs.highlightBlock(block);
+            var wrap = document.createElement("section");
+            wrap.setAttribute("aria-label", "Code block");
+            block.parentNode.replaceWith(wrap);
+            wrap.append(block.parentNode);
+            block.classList.add('highlighted');
+        });
+        elt.querySelectorAll('code.highlight-lines').forEach(function(b){
+            hljs.lineNumbersBlock(b);
+            if ((b.innerHTML.trim().match(/\r\n|\r|\n/g) || []).length > 0){
+                b.parentElement.style = "padding-left: 0px !important;"
+                b.classList.add('hljs');
+            }
+            b.classList.remove('highlight-lines');
+        });
+    }
+    window.addEventListener('DOMContentLoaded', function(){
+        catsoop.syntax_highlighting(document);
+    });
+    // @license-end
+    </script>
+<style>
+      :root {
+        --cs-base-bg-color: #0350ba;
+        --cs-light-bg-color: #629ced;
+        --cs-base-font-color: #fff;
+        --cs-light-font-color: #000;
+    }
+    </style>
+<style>
+.cs_top_menu_item {
+  font-size: 0.88rem;
+}
+div.dropdown {
+  -moz-transform: translateY(-1px);
+}
+img {
+  max-width:100% !important;
+}
+.visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+</style>
+<style>
+[id^=cs_qdiv].question-lab101 [id$=buttons] {
+  display: none;
+}
+[id^=cs_qdiv].question-lab101 [id$=nsubmits_left] {
+  display: none;
+}
+
+[id^=cs_qdiv].question-lab101_vprof [id$=buttons] {
+  display: none;
+}
+[id^=cs_qdiv].question-lab101_vprof [id$=nsubmits_left] {
+  display: none;
+}
+
+</style>
+<script>
+MathJax.options.enableMenu = false;
+</script>
+<style>
+h2.cs_section_title {
+   margin-top: 3em;
+}
+h3.cs_section_title {
+   margin-top: 3em;
+}
+h4.cs_section_title {
+   margin-top: 2em;
+}
+code.hljs {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+img.envdia {
+  border-radius: 5px;
+  border: 2px #ccc solid;
+}
+img.pixels {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+button[id$=clearanswer] {
+  display: none;
+}
+.flex { display: flex; flex-wrap: wrap; }
+.flex > pre { flex: 1; }
+.flex > img { flex: 0 1; }
+</style>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function (){
+    document.querySelectorAll("img.envdia").forEach(function (b){
+        b.classList.add("catsoop-darkmode-invert")
+    });
+});
+</script>
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/multistep.js" type="text/javascript"></script>
+<link href="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/multistep.css" rel="stylesheet">
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+document.addEventListener("DOMContentLoaded", function(){
+    sessionStorage.setItem("last-non-settings", catsoop.this_path);
+});
+// @license-end
+</script>
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/codemirror.bundle.min.js" type="text/javascript"></script>
+<script src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/cs_ajax.js" type="text/javascript"></script>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+<style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://py.mit.edu/_static/_base/js/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c33::before {
+  padding: 0.665em 0.5em 0.022em 0;
+  content: "3";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c30::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "0";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c39::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "9";
+}
+
+mjx-c.mjx-c35::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "5";
+}
+</style></head>
+<body style="margin: 0px;">
+<header id="cs_header">
+<div aria-role="menubar" class="nav-container">
+<div class="cs_header_text"><a href="https://py.mit.edu/spring25"><img src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/logo.gif">&nbsp;6.101</a></div>
+<div class="dropdown" onmouseleave="clearMenu(this);">
+<label class="dropbtn cs_top_menu_item" for="cs_menu_c1a43e3f699a1ed71997b0321c2e9ffd">Information<span aria-hidden="true" class="downarrow">▼</span></label>
+<input class="dropdown-checkbox screenreader-only-clip menu-toplevel" id="cs_menu_c1a43e3f699a1ed71997b0321c2e9ffd" onblur="catsoop.topMenuFocus(event);" role="menuitemcheckbox" type="checkbox">
+<div class="dropdown-content">
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/basics" onblur="catsoop.topMenuFocus(event);" role="menuitem">Basics and Schedule</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/grading" onblur="catsoop.topMenuFocus(event);" role="menuitem">Grading Policies</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/academic_integrity" onblur="catsoop.topMenuFocus(event);" role="menuitem">Academic Integrity</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/help" onblur="catsoop.topMenuFocus(event);" role="menuitem">Getting Help</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/infrastructure" onblur="catsoop.topMenuFocus(event);" role="menuitem">Infrastructure</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/info/staff" onblur="catsoop.topMenuFocus(event);" role="menuitem">Staff List</a></div></div>
+<div class="dropdown" onmouseleave="clearMenu(this);">
+<label class="dropbtn cs_top_menu_item" for="cs_menu_ee51a2d5002bd02613936bd9b2f3dbee">Materials<span aria-hidden="true" class="downarrow">▼</span></label>
+<input class="dropdown-checkbox screenreader-only-clip menu-toplevel" id="cs_menu_ee51a2d5002bd02613936bd9b2f3dbee" onblur="catsoop.topMenuFocus(event);" role="menuitemcheckbox" type="checkbox">
+<div class="dropdown-content">
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/calendar" onblur="catsoop.topMenuFocus(event);" role="menuitem">Calendar</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/readings" onblur="catsoop.topMenuFocus(event);" role="menuitem">Readings</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/labs" onblur="catsoop.topMenuFocus(event);" role="menuitem">Labs</a></div></div>
+<a class="cs_top_menu_item menu-toplevel" href="https://py.mit.edu/spring25/progress" onblur="catsoop.topMenuFocus(event);" role="menuitem">Progress</a>
+<a class="cs_top_menu_item menu-toplevel" href="https://py.mit.edu/spring25/queue" onblur="catsoop.topMenuFocus(event);" role="menuitem">Queue</a>
+<div class="dropdown" onmouseleave="clearMenu(this);">
+<label class="dropbtn cs_top_menu_item" for="cs_menu_8870c25cbf62a0b2e68c61de38e8ffe8">tjampa<span aria-hidden="true" class="downarrow">▼</span></label>
+<input class="dropdown-checkbox screenreader-only-clip menu-toplevel" id="cs_menu_8870c25cbf62a0b2e68c61de38e8ffe8" onblur="catsoop.topMenuFocus(event);" role="menuitemcheckbox" type="checkbox">
+<div class="dropdown-content">
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/ssh_keys" onblur="catsoop.topMenuFocus(event);" role="menuitem">Manage SSH Keys</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/_util/user_settings" onblur="catsoop.topMenuFocus(event);" role="menuitem">Settings</a>
+<a class="cs_top_menu_item menu-submenu" href="https://py.mit.edu/spring25/readings/backtracking?loginaction=logout" onblur="catsoop.topMenuFocus(event);" role="menuitem">Log Out</a></div></div><a class="icon" href="javascript:void(0);" onclick="toggleResponsiveHeader()" aria-label="site-menu">☰</a>
+</div>
+</header>
+<nav aria-label="Breadcrumbs" class="cs_navigation cs_top_navigation" id="cs_breadcrumbs"><li><a href="https://py.mit.edu/spring25">Home</a></li><li><a href="https://py.mit.edu/spring25/readings">Course Readings</a></li><li><a href="https://py.mit.edu/spring25/readings/backtracking">Backtracking</a></li></nav>
+<div class="cs_body" id="cs_body">
+<div class="cs_left_menu"></div>
+<div class="cs_content">
+<div class="cs_page_body" role="main">
+<center><h1 class="cs_content_header">Recursive Backtracking</h1></center>
+<div class="callout callout-warning" markdown="">
+<p>This reading is relatively new, and your feedback will help us
+improve it!  If you notice mistakes (big or small), if you have questions, if
+anything is unclear, if there are things not covered here that you'd like to
+see covered, or if you have any other suggestions; please get in touch during
+office hours or open lab hours, or via e-mail at <code>6.101-help@mit.edu</code>.</p>
+</div>
+<div class="callout callout-note"><div class="callout-title">Note</div>
+<p>All questions on this page are due at 10:00pm on Sunday, 06 April.</p>
+</div>
+<h2 aria-hidden="true">Table of Contents</h2><ul aria-label="Table of Contents" role="navigation"><li><a href="#_introduction">1) Introduction</a></li><li><a href="#_the_mixtape">2) The Mixtape</a></li><li><a href="#_an_alternative_approach">3) An Alternative Approach</a></li><li><a href="#_yet_another_approach">4) Yet Another Approach</a></li><li><a href="#_an_iterative_mixtape_version">5) An Iterative Mixtape Version</a></li><ul><li><a href="#_a_note_on_efficiency">5.1) A note on efficiency</a></li></ul><li><a href="#_sudoku">6) Sudoku</a></li><ul><li><a href="#_improving_efficiency">6.1) Improving Efficiency</a></li><li><a href="#_improving_efficiency_mutation">6.2) Improving Efficiency: Mutation</a></li></ul><li><a href="#_summary">7) Summary</a></li></ul>
+<p><a class="anchor" name="catsoop_section_1"></a><a class="anchor" name="_introduction"></a></p><h2 class="cs_section_title">1) Introduction<a class="cs_permalink" href="#_introduction">§</a></h2><p></p>
+<p>Many problems can be solved by a trial-and-error method. <a href="https://en.wikipedia.org/wiki/Bertrand_Russell">Bertrand Russell</a>, a
+famous mathematical logician of the 20th century, suggested that a bunch of
+monkeys banging away randomly at typewriters in the basement of the British
+Museum might eventually reproduce the text of Shakespeare's Hamlet if they
+work long enough. Computer scientists thus talk about the <em>British Museum
+Algorithm</em> as a baseline way to solve any problem for which all possible
+solutions can be enumerated: just try them all until one succeeds.</p>
+<p>Computers are thought of as being really good at this kind of
+drudgery, but even their speed is daunted by large problems. For
+example, Hamlet contains 29,551 words, according to Wikipedia, and
+Shakespeare's known writings contain about 31,000 unique
+words. So, to generate Hamlet, our computer might use the
+following strategy to type a text that turns out to be Hamlet:</p>
+<ul>
+<li>While the story is shorter than Hamlet (in word count), try
+extending it by each one of the words in Shakespeare's vocabulary.</li>
+<li>If the story is equal to Hamlet, stop and declare success.</li>
+</ul>
+
+<!--
+Something like this might be implemented as the generator function `bm` in the code
+below. Using a tiny vocabulary and a goal story of only four words, this would
+still not find the correct story until the 1441-st try.
+
+```py
+vocabulary = 'I am Hamlet the prince of Denmark'.split()
+goal = 'the prince am I'.split()
+
+def bm(story, vocabulary, goal):
+    yield story
+    if len(story) < len(goal):
+        for w in vocabulary:
+            yield from bm(story + [w], vocabulary, goal)
+
+for index, story in enumerate(bm([])):
+    print(index, story)
+    if story == goal:
+        break
+
+
+bm([])
+1 []
+2 ['I']
+3 ['I', 'I']
+4 ['I', 'I', 'I']
+5 ['I', 'I', 'I', 'I']
+6 ['I', 'I', 'I', 'am']
+7 ['I', 'I', 'I', 'Hamlet']
+8 ['I', 'I', 'I', 'the']
+9 ['I', 'I', 'I', 'prince']
+10 ['I', 'I', 'I', 'of']
+11 ['I', 'I', 'I', 'Denmark']
+12 ['I', 'I', 'am']
+...
+1441 ['the', 'prince', 'am', 'I']
+```
+
+<div class="question"><b>Check Yourself:</b><p>How many possible "stories" could the above program generate for a goal of four
+words?</p><p><span id="queue_checkyourself_1"></span></p></div>
+-->
+<!--
+log_10 31000^29551 = 29551 log 31000 = 29551 * 4.49136 = 132724.229414
+-->
+<p>Unfortunately, the expected running time of this process is proportional to
+the number of possible stories with the same number of words as Hamlet ---
+which would be <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c39"></mjx-c><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>31000</mn><mrow data-mjx-texclass="ORD"><mn>29551</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></span>, or roughly <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c33"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c37"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mrow data-mjx-texclass="ORD"><mn>132724</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></span> possible stories. No
+super-fast computer running for the lifetime of the universe could complete
+this task. For more realistic approaches, constraints along the way in
+examining possible solutions can dramatically cut down on such giant problems
+by cutting off lines of exploration as soon as they can be shown not to lead to
+solutions.</p>
+<p>For example, if we had a perfect grammar checker for Elizabethan English, we
+could stop exploring a story as soon as we hit an ungrammatical patch in its
+construction.</p>
+<p>In this reading, we explore methods to solve complex problems using recursion
+to reduce a larger problem to a number of smaller ones by trying each possible
+next step toward a solution and seeing if the resulting subproblem is solvable.</p>
+<p><a class="anchor" name="catsoop_section_2"></a><a class="anchor" name="_the_mixtape"></a></p><h2 class="cs_section_title">2) The Mixtape<a class="cs_permalink" href="#_the_mixtape">§</a></h2><p></p>
+<p><a href="https://en.wikipedia.org/wiki/Cassette_tape">The compact cassette tape</a>, developed by Philips in the early 1960s, democratized
+music recording by allowing anyone with a relatively inexpensive cassette
+recorder to record or copy music and to share it with friends. A popular
+use of these tapes was to create a <em>mixtape</em>, copying songs perhaps from a
+variety of sources onto a collection that had special meaning. Gifts of
+mixtapes were common, so a tape of love songs could musically express feelings
+that a person might find difficult to share otherwise.</p>
+<p>Here is an example of a tape one of the instructors made a long time ago:</p>
+<center>
+<img src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/cassette.jpg">
+</center>
+<p>Each tape, unlike today's almost infinite digital repositories, had a limited
+capacity (60 minutes in the image, which means 30 minutes on each side of the
+tape), and we were driven to include as much music as possible on a tape. So,
+the mixtape problem was defined as:</p>
+<ul>
+<li>from a collection of songs, choose a set that comes closest to filling a tape.</li>
+</ul>
+<p>We use a variant of this problem in this reading, namely choosing a set of
+songs for a mixtape that exactly fills the capacity of (one side of) the tape.
+We will represent the collection of songs by a <code>dict</code> whose keys are the song
+titles and whose values are the lengths of the songs (in minutes). The function
+<code>mixtape</code>, then, is called with a song collection and the target duration:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mixtape</span>(<span class="hljs-params">songs, target_duration</span>):</span>
+    <span class="hljs-string">"""
+    Given a dictionary of songs (mapping titles to durations), as well as a
+    total target duration, return a set of song titles such that the sum of
+    those songs' durations equals the target_duration.
+
+    If no such set exists, return None instead.
+
+    &gt;&gt;&gt; songs = {'A': 5, 'B': 10, 'C': 6, 'D': 2}
+    &gt;&gt;&gt; mixtape(songs, 21) == {'A', 'B', 'C'}
+    True
+    &gt;&gt;&gt; mixtape(songs, 1000) is None
+    True
+    """</span>
+    <span class="hljs-keyword">raise</span> NotImplementedError
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    <span class="hljs-keyword">import</span> doctest
+    doctest.testmod()
+</code></pre></section>
+<p>This code is included in <a href="https://py.mit.edu/_static/spring25/readings/backtracking/mixtape.zip"><code>mixtape.zip</code></a>,
+which you can use to follow along if you're interested.  This file also includes
+several test cases and a <code>test.py</code> file.</p>
+<p>Note the doctest, which specifies that we should be able to fill 21 minutes
+using songs <code>'A'</code>, <code>'B'</code> and <code>'C'</code>, but that we cannot fill a tape with a
+duration of 1000 minutes (there just aren't enough songs in our collection).</p>
+<p><em>A note on the doctest</em>: Normally, we might write the first test as</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    &gt;&gt;&gt; mixtape(songs, <span class="hljs-number">21</span>)
+    {<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>}
+</code></pre></section>
+<p>but because Python does not guarantee to print the elements of a set in any
+particular order, we instead test for set equality and expect the result to
+print as <code>True</code>.</p>
+<p>We approach this problem using recursion, which the previous readings covered.
+In such an approach, we need to identify any base case(s), which can be solved
+without further recursion, and the recursive case(s), where we can solve a
+smaller version of the problem to build up the solution to the original.</p>
+<div class="question"><b>Check Yourself:</b><p></p><p>What base case(s) do you recognize in the mixtape problem?</p>
+<p>How would recursion allow the solution of a subproblem to build the solution to the original problem?
+</p><p></p><p><span id="queue_checkyourself_2"></span></p></div>
+<p>Let's first focus on the recursive problem, using the trial-and-error approach.
+The basic idea is to pick one of the songs in the song list and assume that it
+will be part of the mixtape. That leaves us the problem of filling the rest of
+the tape (the remaining duration after subtracting the length of the chosen
+song) with the remaining songs.</p>
+<p>Our first approach to implementing this idea in code might look as follows:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    song = list(songs.keys())[<span class="hljs-number">0</span>] <span class="hljs-comment"># pick an arbitrary song</span>
+    duration = songs[song]
+    <span class="hljs-keyword">return</span> {song} | mixtape({k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> songs.items() <span class="hljs-keyword">if</span> k != song},
+                            target_duration - duration)
+</code></pre></section>
+<p>The <code>|</code> operator is being used here to take the <a href="https://docs.python.org/3/library/stdtypes.html#frozenset.union">union of two sets</a>.</p>
+<p>So, the answer to the recursive case is a set of songs, including the chosen
+song and the set chosen for the subproblem of filling the remaining duration.
+You will see that we'll need to tweak this a bit, but it's the right basic
+idea.</p>
+<p>To construct the <code>dict</code> of songs remaining for the subproblem, we used a dictionary
+comprehension, iterating over each of the key/value pairs in <code>songs</code> and
+including all the ones except the chosen song.  In case that format is new,
+it's worth mentioning that the following is an alternative that accomplishes
+the same goal:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    new_songs = dict(songs)
+    <span class="hljs-keyword">del</span> new_songs[song]
+    <span class="hljs-keyword">return</span> {song} | mixtape(new_songs, target_duration - duration)
+</code></pre></section>
+<p>This code avoids the dict comprehension, but it's critical to copy
+<code>songs</code>, because <code>del</code> mutates the dict it works on.  Moving forward, we'll
+stick with the dictionary-comprehension-based approach since it makes it
+clearer that a copy is being made.</p>
+<p>Observing that the target duration decreases on each recursive call gives us a
+clue about what a base case might be. If the <code>target_duration == 0</code>, then we
+have solved the problem and need to add no more songs to the solution set, so
+we can return the empty set.  With this in mind, the body of the mixtape
+function would look like this:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    <span class="hljs-keyword">if</span> target_duration == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> set()
+
+    song = list(songs.keys())[<span class="hljs-number">0</span>]
+    duration = songs[song]
+    <span class="hljs-keyword">return</span> {song} | mixtape({k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> songs.items() <span class="hljs-keyword">if</span> k != song},
+                            target_duration - duration)
+</code></pre></section>
+<p>You could try to run this version of the program with the doctest, but you will
+see that, although the first example succeeded, the second failed:</p>
+<section aria-label="Code block"><pre><code class="nohighlight highlighted">Failed example:
+    mixtape(songs, 1000) is None
+</code></pre></section>
+<p>You'll see an error message saying that <code>IndexError: list index out of range</code>
+in the line <code>song = list(songs.keys())[0]</code>.</p>
+<p>
+<!--START question first_error_decoding --></p><section aria-label="Question">
+<div class="question question-multiplechoice" id="cs_qdiv_first_error_decoding" style="position: static">
+<div id="first_error_decoding_rendered_question">
+<div id="catsoop_preamble_first_error_decoding"></div>
+<div id="catsoop_prompt_first_error_decoding" style="display: inline;">What is the core issue that leads to this error?<br></div><div aria-labelledby="catsoop_prompt_first_error_decoding" role="radiogroup">
+<div style="margin-bottom: 10px;"><input id="first_error_decoding_opts_0" name="first_error_decoding_opts" type="radio" value="0"><label for="first_error_decoding_opts_0"><code>list</code> makes a new list containing <code>song.keys()</code> as a single element.  We should use <code>[songs.keys()]</code> instead.</label></div>
+<div style="margin-bottom: 10px;"><input id="first_error_decoding_opts_1" name="first_error_decoding_opts" type="radio" value="1"><label for="first_error_decoding_opts_1"><code>songs.keys()</code> can't be converted to a list.</label></div>
+<div style="margin-bottom: 10px;"><input checked="checked" id="first_error_decoding_opts_2" name="first_error_decoding_opts" type="radio" value="2"><label for="first_error_decoding_opts_2"><code>songs</code> is empty.</label></div>
+<div style="margin-bottom: 10px;"><input id="first_error_decoding_opts_3" name="first_error_decoding_opts" type="radio" value="3"><label for="first_error_decoding_opts_3">Indexing into <code>songs.keys()</code> is impossible.</label></div>
+</div><input id="first_error_decoding" name="first_error_decoding" type="hidden" value="2">
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+document.querySelectorAll("input[type=radio][name=first_error_decoding_opts]").forEach(function(r){
+    r.addEventListener("click", function(){
+        document.getElementById("first_error_decoding").value = this.value;
+    });
+});
+// @license-end
+</script>
+</div><div>
+<span id="first_error_decoding_buttons">
+<button class="submit btn btn-catsoop" id="first_error_decoding_submit" onclick="catsoop.submit('first_error_decoding');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="first_error_decoding_clearanswer" onclick="catsoop.clearanswer('first_error_decoding');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="first_error_decoding_loading_wrapper" role="status">
+<span id="first_error_decoding_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="first_error_decoding_score_display" role="status"></span>
+<div class="nsubmits_left" id="first_error_decoding_nsubmits_left" role="status">You have submitted this assignment 1 time.</div></div>
+<div class="solution" id="first_error_decoding_solution_container">
+<div id="first_error_decoding_solution">
+<b>Solution:</b> <code>songs</code> is empty.
+</div>
+<div id="first_error_decoding_solution_explanation"><hr><p><b>Explanation:</b></p>
+<p>With each recursive call, it's not only the case that <code>target_duration</code> is
+getting smaller; <code>songs</code> is getting smaller as well!  On each recursive call,
+we have one fewer song in the dictionary.</p>
+<p>Eventually, we reach the case where <code>songs</code> is empty.  In that case,
+<code>list(songs.keys())</code> will be an empty list <code>[]</code>, and so looking up index 0
+inside of that list fails!</p>
+</div>
+</div>
+<div aria-atomic="true" id="first_error_decoding_message" role="status"><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></div>
+</div>
+</section>
+<!--END question first_error_decoding -->
+<p></p>
+<p>This suggests a second base case: if we run out of songs when we still
+have <code>target_duration</code> to fill.</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> songs:
+        <span class="hljs-keyword">return</span> _______ <span class="hljs-comment"># &lt; -- something</span>
+</code></pre></section>
+<p>
+<!--START question failure_base_case_return --></p><section aria-label="Question">
+<div class="question question-smallbox" id="cs_qdiv_failure_base_case_return" style="position: static">
+<div id="failure_base_case_return_rendered_question">
+<div id="catsoop_preamble_failure_base_case_return"></div>
+<div id="catsoop_prompt_failure_base_case_return" style="display: inline;">Given the specification of <code>mixtape</code> from its docstring, what should go in the blank above?<br></div><input aria-labelledby="catsoop_prompt_failure_base_case_return" id="failure_base_case_return" name="failure_base_case_return" type="text" value="None">
+</div><div>
+<span id="failure_base_case_return_buttons">
+<button class="submit btn btn-catsoop" id="failure_base_case_return_submit" onclick="catsoop.submit('failure_base_case_return');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="failure_base_case_return_clearanswer" onclick="catsoop.clearanswer('failure_base_case_return');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="failure_base_case_return_loading_wrapper" role="status">
+<span id="failure_base_case_return_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="failure_base_case_return_score_display" role="status"></span>
+<div class="nsubmits_left" id="failure_base_case_return_nsubmits_left" role="status">You have submitted this assignment 3 times.</div></div>
+<div class="solution" id="failure_base_case_return_solution_container">
+<div id="failure_base_case_return_solution">
+<b>Solution:</b> None
+</div>
+<div id="failure_base_case_return_solution_explanation">
+</div>
+</div>
+<div aria-atomic="true" id="failure_base_case_return_message" role="status"><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></div>
+</div>
+</section>
+<!--END question failure_base_case_return -->
+<p></p>
+<p>Now that we have changed our base case(s), we need to adjust our recursive case
+as well.  Previously, we had been acting under the assumption that our
+recursive result would always be a set.  But now that's no longer true!  So
+let's adjust our code to try to account for this:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    recursive_result = mixtape({k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> songs.items() <span class="hljs-keyword">if</span> k != song},
+                               target_duration - duration)
+    <span class="hljs-keyword">if</span> recursive_result:
+        <span class="hljs-keyword">return</span> {song} | recursive_result
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>
+<!--START question truthiness_bug --></p><section aria-label="Question">
+<div class="question question-multiplechoice" id="cs_qdiv_truthiness_bug" style="position: static">
+<div id="truthiness_bug_rendered_question">
+<div id="catsoop_preamble_truthiness_bug"></div>
+<div id="catsoop_prompt_truthiness_bug" style="display: inline;">After making this change, what will happen when running the first
+doctest, <code>mixtape(songs, 21)</code>?<br></div>
+<select aria-labelledby="catsoop_prompt_truthiness_bug" id="truthiness_bug" name="truthiness_bug">
+<option value="-1">--</option>
+<option value="0">It will return the correct result, {'A', 'B', 'C'}.</option>
+<option selected="selected" value="1">It will run to completion but it will return an incorrect result.</option>
+<option value="2">It will enter an infinite loop.It will start an infinite recursion (resulting in a RecursionError exception).</option>
+<option value="3">It will raise a different kind of exception.</option>
+<option value="4">Something else.</option></select>
+</div><div>
+<span id="truthiness_bug_buttons">
+<button class="submit btn btn-catsoop" id="truthiness_bug_submit" onclick="catsoop.submit('truthiness_bug');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="truthiness_bug_clearanswer" onclick="catsoop.clearanswer('truthiness_bug');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="truthiness_bug_loading_wrapper" role="status">
+<span id="truthiness_bug_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="truthiness_bug_score_display" role="status"></span>
+<div class="nsubmits_left" id="truthiness_bug_nsubmits_left" role="status">You have submitted this assignment 2 times.</div></div>
+<div class="solution" id="truthiness_bug_solution_container">
+<div id="truthiness_bug_solution">
+<b>Solution:</b> It will run to completion but it will return an incorrect result.
+</div>
+<div id="truthiness_bug_solution_explanation"><hr><p><b>Explanation:</b></p>
+<p>We expect the sequence of recursive calls with the following arguments:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">{<span class="hljs-string">'A'</span>: <span class="hljs-number">5</span>, <span class="hljs-string">'B'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'C'</span>: <span class="hljs-number">6</span>, <span class="hljs-string">'D'</span>: <span class="hljs-number">2</span>}, <span class="hljs-number">21</span>
+{<span class="hljs-string">'B'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'C'</span>: <span class="hljs-number">6</span>, <span class="hljs-string">'D'</span>: <span class="hljs-number">2</span>}, <span class="hljs-number">16</span>
+{<span class="hljs-string">'C'</span>: <span class="hljs-number">6</span>, <span class="hljs-string">'D'</span>: <span class="hljs-number">2</span>}, <span class="hljs-number">6</span>
+{<span class="hljs-string">'D'</span>: <span class="hljs-number">2</span>}, <span class="hljs-number">0</span>
+</code></pre></section>
+<p>and we expect the recursive calls to return</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">set()
+{<span class="hljs-string">'C'</span>}
+{<span class="hljs-string">'C'</span>, <span class="hljs-string">'B'</span>}
+{<span class="hljs-string">'C'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'A'</span>}
+</code></pre></section>
+<p>Try adding statements to print the return value of each call just before we
+return it.  What do you see, and how does it differ from what we expect?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>Instead of the expected
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">set()
+{<span class="hljs-string">'C'</span>}
+{<span class="hljs-string">'C'</span>, <span class="hljs-string">'B'</span>}
+{<span class="hljs-string">'C'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'A'</span>}
+</code></pre></section>
+<p>we see:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">set()
+<span class="hljs-literal">None</span>
+<span class="hljs-literal">None</span>
+<span class="hljs-literal">None</span>
+</code></pre></section>
+<p>(Remember that you will eventually need to comment out or remove these debugging print statements, because <a href="https://py.mit.edu/spring25/readings/recursion/#_aside_doctest">doctest can't handle unexpected output</a>.)
+</p></div></div>
+<div class="question"><b>Check Yourself:</b><p></p><p>Can you see where our coding style inadvertently does the wrong thing?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>Note that we've got two different possible return values from our two separate
+base cases: if the tape is already full, we return <code>set()</code>.  This indicates a
+<em>trivial success</em>; that is, we've already accomplished our goal of filling the
+tape, and no new songs are necessary!  In our other base case, where we've run
+out of songs, we return <code>None</code>, which indicates <em>failure</em>.  These two values
+mean very different things!
+<p>The problem with our code above is that we used <code>if recursive_result</code> assuming
+that it would fail only on <code>None</code>. However, Python considers many other values
+to be "falsy," including <code>[]</code>, <code>0</code>, and <code>set()</code>.</p>
+<p>Thus, when a recursive call returns <code>set()</code> (which should be treated as a
+success!), our code treats it as a failure instead.</p>
+<p>We can fix this by testing not for truthiness but explicitly for <code>None</code>:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    <span class="hljs-keyword">if</span> recursive_result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-keyword">return</span> {song} | recursive_result
+</code></pre></section>
+<p>(Note that careful Python programmers use <code>is None</code> or <code>is not None</code> for this kind of test, rather than <code>== None</code> or <code>!= None</code>.
+  There's no real difference if you're only working with built-in types 
+like lists, sets, and strings, but once you have custom types (which we 
+discuss in a future reading), the meaning of <code>==</code> and <code>!=</code> might be different than you expect.  You can read <a href="http://jaredgrubb.blogspot.com/2009/04/python-is-none-vs-none.html">more about the difference between <code>is None</code> and <code>== None</code></a>.)</p></div></div>
+<p></p><p><span id="queue_checkyourself_1"></span></p></div>
+</div>
+</div>
+<div aria-atomic="true" id="truthiness_bug_message" role="status"><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></div>
+</div>
+</section>
+<!--END question truthiness_bug -->
+<p></p>
+<p>After having made the change recommended in the explanation of the 
+exercise just above, the code now passes both test cases.  So are we
+done?  Well, from the tone of this reading, you might well guess: No!</p>
+<p>Passing two test cases is great, and we shouldn't discount the progress we've
+made so far.  However, passing those two test cases (in fact, passing <em>any</em>
+number of test cases) isn't really a perfect guarantee that our code is working
+as expected.  So we've got some more work to do.</p>
+<div class="question"><b>Check Yourself:</b><p></p><p>Despite passing the two tests in the docstring, our code will still fail in
+some cases.  Can you construct a different test case that would show a
+remaining error?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>A simple test case to illustrate that our program is still not quite right is
+to add the doctest:
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-meta">&gt;&gt;&gt; </span>mixtape(songs, <span class="hljs-number">10</span>) == {<span class="hljs-string">'B'</span>}
+<span class="hljs-literal">True</span>
+</code></pre></section>
+<p>This fails, printing nothing (which indicates that instead of the expected
+answer, our code is returning <code>None</code>).</p></div></div>
+<p></p><p><span id="queue_checkyourself_3"></span></p></div>
+<p>Our algorithm, so far, actually does not explore all possibilities. When we
+chose <code>list(songs.keys())[0]</code> as the next song to try to use, our recursive
+call assumed that that song was part of the solution.  So we're failing
+to consider any solution that doesn't include that first song!</p>
+<p>So in some sense, it worked for our previous example only because we got lucky
+(because the first three songs chosen happened to fill the tape).  In reality,
+we need to consider a couple of different possibilities in our recursive case(s):</p>
+<ol>
+<li>The first song chosen is part of a solution, and we can solve the subproblem of filling the rest of the time.</li>
+<li>That song <em>is not</em> part of a solution.  In this case, rather than assuming that there is no solution, we ought to consider possibilities <em>that don't include that song</em>.</li>
+</ol>
+<p>This method shows the essence of <em>backtracking</em>: try something, and if it does
+not work, try another alternative.  This should resonate with what you remember
+from the <a href="https://py.mit.edu/spring25/readings/recursion2#_tree_like_patterns">recursion reading</a> about searching trees of possibilities.</p>
+<p>We implement this as follows:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mixtape</span>(<span class="hljs-params">songs, target_duration</span>):</span>
+    <span class="hljs-string">"""
+    Given a dictionary of songs (mapping titles to durations), as well as a
+    total target duration, return a set of song titles such that the sum of
+    those songs' durations equals the target_duration.
+
+    If no such set exists, return None instead.
+
+    &gt;&gt;&gt; songs = {'A': 5, 'B': 10, 'C': 6, 'D': 2}
+    &gt;&gt;&gt; mixtape(songs, 21) == {'A', 'B', 'C'}
+    True
+    &gt;&gt;&gt; mixtape(songs, 1000) is None
+    True
+    &gt;&gt;&gt; mixtape(songs, 10)
+    {B}
+    """</span>
+    <span class="hljs-keyword">if</span> target_duration == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> set()
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> songs:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    song = list(songs.keys())[<span class="hljs-number">0</span>]
+    songs_rest = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> songs.items() <span class="hljs-keyword">if</span> k != song}
+    duration = songs[song]
+
+    <span class="hljs-comment"># if the first song is part of a solution, we can fill the remaining space</span>
+    <span class="hljs-comment"># on the tape with the other songs</span>
+    recursive_result1 = mixtape(songs_rest, target_duration - duration)
+    <span class="hljs-keyword">if</span> recursive_result1 <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-keyword">return</span> {song} | recursive_result1
+
+    <span class="hljs-comment"># if the first song is not part of the solution, we should try to fill the</span>
+    <span class="hljs-comment"># _whole_ duration with the other songs</span>
+    recursive_result2 = mixtape(songs_rest, target_duration)
+    <span class="hljs-keyword">if</span> recursive_result2 <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-keyword">return</span> recursive_result2
+
+    <span class="hljs-comment"># if there is no solution with the first song, and no solution without it,</span>
+    <span class="hljs-comment"># then there must be no solution.  it's only now that we can safely return</span>
+    <span class="hljs-comment"># None to indicate failure.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>The first recursive case tests if we can solve the problem by including the
+selected song, and the second case tests if we can solve it by excluding that song.</p>
+<p>This version does now solve the problem, though additional minor changes could
+improve it. For example, once the <code>target_duration</code> becomes negative, no
+solution on that path is possible, so we could adjust the failure case as follows:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    <span class="hljs-keyword">if</span> target_duration &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> songs:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>Without this change, the code would <em>theoretically</em> work, but finding a failure
+case could take a <em>really</em> long time for cases where there is no solution.</p>
+<p><a class="anchor" name="catsoop_section_3"></a><a class="anchor" name="_an_alternative_approach"></a></p><h2 class="cs_section_title">3) An Alternative Approach<a class="cs_permalink" href="#_an_alternative_approach">§</a></h2><p></p>
+
+
+<p>This latest version is a pure recursive solution, but some mixture of recursion
+and iteration is also possible. For example, instead of recursing on the
+"exclude this song" case, we could iterate over which song to include:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mixtape</span>(<span class="hljs-params">songs, target_duration</span>):</span>
+    <span class="hljs-string">"""
+    Given a dictionary of songs (mapping titles to durations), as well as a
+    total target duration, return a set of song titles such that the sum of
+    those songs' durations equals the target_duration.
+
+    If no such set exists, return None instead.
+
+    &gt;&gt;&gt; songs = {'A': 5, 'B': 10, 'C': 6, 'D': 2}
+    &gt;&gt;&gt; mixtape(songs, 21) == {'A', 'B', 'C'}
+    True
+    &gt;&gt;&gt; mixtape(songs, 1000) is None
+    True
+    &gt;&gt;&gt; mixtape(songs, 10)
+    {B}
+    """</span>
+    <span class="hljs-keyword">if</span> target_duration == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> set()
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> songs:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    <span class="hljs-keyword">for</span> song, duration <span class="hljs-keyword">in</span> songs.items():
+        recursive_result = mixtape({k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> songs.items() <span class="hljs-keyword">if</span> k != song},
+                                   target_duration - duration)
+        <span class="hljs-keyword">if</span> recursive_result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">return</span> {song} | recursive_result
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>Here, we try each song in turn and return success if we can recursively
+succeed in filling the tape with others. Instead of failing if the first song
+does not work, we continue to try others, and we only fail if we have run through
+all the songs and none of them worked. Note that, strictly speaking, the
+<code>return None</code> at the end is not needed since any Python function that "falls
+through" its end automatically returns <code>None</code>, but in this case it is helpful
+to the reader to be explicit.</p>
+<!--
+<div class="question"><b>Check Yourself:</b><p>Do you feel more comfortable with the purely recursive solution or the partly iterative one?</p><p><span id="queue_checkyourself_4"></span></p></div>
+-->
+<p>It is an often-used but dangerous assumption by programmers that a program that
+passes a handful of test cases must surely be correct. Passing more test cases
+can increase your confidence, especially if the test cases were crafted well to
+test a variety of situations, but it always remains possible to fail to
+anticipate a case on which the program might fail.  There are techniques of
+proving program correctness under all possible cases, but that is a more
+advanced topic, for a later subject in your curriculum.</p>
+<p>We have included 25 other, larger test cases in the code distribution, which
+you can run by invoking</p>
+<section aria-label="Code block"><pre><code class="nohighlight highlighted">pytest test.py
+</code></pre></section>
+<p><a class="anchor" name="catsoop_section_4"></a><a class="anchor" name="_yet_another_approach"></a></p><h2 class="cs_section_title">4) Yet Another Approach<a class="cs_permalink" href="#_yet_another_approach">§</a></h2><p></p>
+<p>We've seen a couple of alternative approaches already, but let's look at
+another couple of ways we could solve this problem before we move on to
+another example.</p>
+<p>First, we focus on a method that you saw in some of our earlier code on
+recursion. In our solution above, we dive down into subproblems that, if solved
+successfully, return part of the answer (starting with an empty set by default,
+which could just as well be an immutable <code>frozenset</code>) and build up
+the entire answer as they return to higher levels of the recursion. Here we
+will consider an alternative in which the possible answer is constructed on the
+way down instead.</p>
+<p>We accumulate in the set <code>so_far</code> the songs we have chosen to that point. The
+success base case is if their total duration equals the target, and the failure
+case is if that total exceeds the target. We follow the approach of iterating
+over all the songs and seeing if we can solve the recursive problem by adding
+that song to the <code>so_far</code> set in the recursion.</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mixtape</span>(<span class="hljs-params">songs, target_duration, so_far = frozenset(<span class="hljs-params"></span>)</span>):</span>
+    so_far_duration = sum(songs[s] <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> so_far)
+    <span class="hljs-keyword">if</span> so_far_duration == target_duration:
+        <span class="hljs-keyword">return</span> ______  <span class="hljs-comment"># &lt; -- what should go here?</span>
+
+    <span class="hljs-keyword">if</span> so_far_duration &gt; target_duration:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    <span class="hljs-keyword">for</span> song, duration <span class="hljs-keyword">in</span> songs.items():
+        recursive_result = mixtape(songs, target_duration, so_far | {song})
+        <span class="hljs-keyword">if</span> recursive_result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">return</span> recursive_result
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>Notice that we have equivalent checks to our base cases from our earlier
+version of the code here.  Which parts match up?  How are they different and
+how are they similar?</p>
+<p>
+<!--START question so_far_return --></p><section aria-label="Question">
+<div class="question question-smallbox" id="cs_qdiv_so_far_return" style="position: static">
+<div id="so_far_return_rendered_question">
+<div id="catsoop_preamble_so_far_return"></div>
+<div id="catsoop_prompt_so_far_return" style="display: inline;">What should go in the blank above?<br></div><input aria-labelledby="catsoop_prompt_so_far_return" id="so_far_return" name="so_far_return" type="text" value="so_far">
+</div><div>
+<span id="so_far_return_buttons">
+<button class="submit btn btn-catsoop" id="so_far_return_submit" onclick="catsoop.submit('so_far_return');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="so_far_return_clearanswer" onclick="catsoop.clearanswer('so_far_return');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="so_far_return_loading_wrapper" role="status">
+<span id="so_far_return_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="so_far_return_score_display" role="status"></span>
+<div class="nsubmits_left" id="so_far_return_nsubmits_left" role="status">You have submitted this assignment 3 times.</div></div>
+<div class="solution" id="so_far_return_solution_container">
+<div id="so_far_return_solution">
+<b>Solution:</b> so_far
+</div>
+<div id="so_far_return_solution_explanation"><hr><p><b>Explanation:</b></p>
+<p>In this version of the code, we add the song we're considering to the
+<code>so_far</code> set that we pass in to the recursive call.  So by the time we
+hit our base case, we have all the songs we need (i.e., <code>so_far</code> represents
+the solution to the original problem).  So we should just return <code>so_far</code>.</p>
+<p>In every case, the caller simply returns whatever the recursive call returned,
+so this result will ultimately be the value we return from the top-level call.</p>
+</div>
+</div>
+<div aria-atomic="true" id="so_far_return_message" role="status"><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></div>
+</div>
+</section>
+<!--END question so_far_return -->
+<p></p>
+<p>Sadly, even with the right value in the blank, testing this on the doctests
+(not shown here to save space) fails with a <code>RecursionError</code>. Why?
+When we pass <code>songs</code> down to our recursive cases, the iteration will
+always start by trying to add the same first song to <code>so_far</code>.  Since adding the
+same element to a set does not change the set, each recursive subproblem
+is just identical to the previous problem, so this would lead to an infinite regress.
+When it reaches Python's recursion limit, Python cuts it off and raises <code>RecursionError</code>.</p>
+<p>This problem is relatively easy to fix by adding a test to the iteration so we
+skip over songs that are already in <code>so_far</code>:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">        <span class="hljs-keyword">if</span> song <span class="hljs-keyword">in</span> so_far:
+            <span class="hljs-keyword">continue</span>
+</code></pre></section>
+<p>Remember that <code>continue</code> tells Python just to go on to the next iteration of
+the <code>for</code> loop.</p>
+<p>This version now solves the problem.</p>
+<div class="question"><b>Check Yourself:</b><p></p><p>Unlike in our previous solution, we used no base case to check if we are out of
+other songs to try.  Why does this code work despite not having that piece of
+code represented explicitly?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>In this code, if all the songs are already in <code>so_far</code>, we
+just fall through the <code>for</code> loop and return <code>None</code> for failure. But the same
+idea would also apply in our previous program, so the base case
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> songs:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>is actually redundant and could be dropped. It probably <em>should</em> be dropped,
+since more lines of code generally leads to more opportunities for errors.</p></div></div>
+<p></p><p><span id="queue_checkyourself_5"></span></p></div>
+<p><a class="anchor" name="catsoop_section_5"></a><a class="anchor" name="_an_iterative_mixtape_version"></a></p><h2 class="cs_section_title">5) An Iterative Mixtape Version<a class="cs_permalink" href="#_an_iterative_mixtape_version">§</a></h2><p></p>
+<p>In our reading on graph search, we saw that it is possible, and often helpful,
+to maintain an agenda that keeps track of the program's state and its plans
+for what paths to search in the future.  Here, we will develop a version of
+<code>mixtape</code> that takes just this approach.  Then, we'll use this as a jumping-off
+point for a discussion of the similarities and differences between the
+recursive and iterative solutions to this problem.</p>
+<div class="question"><b>Check Yourself:</b><p></p><p>Try to think about how we can use the agenda-based approach to construct a
+solution to this problem.  Can you think of how the code might be structured?
+What will the elements in our agenda represent?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>Here is a working implementation of this idea (omitting the comment and
+doctests to save space):
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mixtape</span>(<span class="hljs-params">songs, target_duration</span>):</span>
+    agenda = [set()]
+    <span class="hljs-keyword">while</span> agenda:
+        this_mixtape = agenda.pop()
+        duration = sum(songs[s] <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> this_mixtape)
+        <span class="hljs-keyword">if</span> duration == target_duration:
+            <span class="hljs-keyword">return</span> this_mixtape
+        <span class="hljs-keyword">if</span> duration &gt; target_duration:
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">for</span> song <span class="hljs-keyword">in</span> songs:
+            <span class="hljs-keyword">if</span> song <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> this_mixtape:
+                agenda.append(this_mixtape | {song})
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre></section>
+<p>Each element in our agenda represents a possible solution to the problem, in
+the form of a set of songs.  As we pull possibilities from the agenda, we
+check the length of each:</p>
+<ul>
+<li>If it's the right length, we just return it (this is equivalent to the "success" base case in our recursive version).</li>
+<li>If it's too long, then we skip it, since neither it nor its 
+descendents can possibly solve the problem (this is equivalent to at 
+least part of our "failure" base case from above).</li>
+<li>If it's too short, we skip it but we add related sets to the agenda, each containing one more song.</li>
+</ul>
+<p>When we run out of possibilities to try, we return <code>None</code>, signalling failure.</p></div></div>
+<p></p><p><span id="queue_checkyourself_6"></span></p></div>
+<p>
+<!--START question bfs_dfs --></p><section aria-label="Question">
+<div class="question question-multiplechoice" id="cs_qdiv_bfs_dfs" style="position: static">
+<div id="bfs_dfs_rendered_question">
+<div id="catsoop_preamble_bfs_dfs"></div>
+<div id="catsoop_prompt_bfs_dfs" style="display: inline;">Is the code above doing a depth-first search, a breadth-first search, or something else?<br></div>
+<select aria-labelledby="catsoop_prompt_bfs_dfs" id="bfs_dfs" name="bfs_dfs">
+<option value="-1">--</option>
+<option selected="selected" value="0">DFS</option>
+<option value="1">BFS</option>
+<option value="2">Something else</option></select>
+</div><div>
+<span id="bfs_dfs_buttons">
+<button class="submit btn btn-catsoop" id="bfs_dfs_submit" onclick="catsoop.submit('bfs_dfs');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="bfs_dfs_clearanswer" onclick="catsoop.clearanswer('bfs_dfs');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="bfs_dfs_loading_wrapper" role="status">
+<span id="bfs_dfs_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="bfs_dfs_score_display" role="status"></span>
+<div class="nsubmits_left" id="bfs_dfs_nsubmits_left" role="status">You have submitted this assignment 1 time.</div></div>
+<div class="solution" id="bfs_dfs_solution_container">
+<div id="bfs_dfs_solution">
+<b>Solution:</b> DFS
+</div>
+<div id="bfs_dfs_solution_explanation"><hr><p><b>Explanation:</b></p>
+<p>Because the agenda pushes and pops items onto/from the same end of its list (i.e., a LIFO queue), it is doing DFS.</p>
+</div>
+</div>
+<div aria-atomic="true" id="bfs_dfs_message" role="status"><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></div>
+</div>
+</section>
+<!--END question bfs_dfs -->
+<p></p>
+<p><a class="anchor" name="catsoop_section_5_1"></a><a class="anchor" name="_a_note_on_efficiency"></a></p><h3 class="cs_section_title">5.1) A note on efficiency<a class="cs_permalink" href="#_a_note_on_efficiency">§</a></h3><p></p>
+<p>Looking at the agenda while the program is solving a simple problem, we see the
+following successive states, showing the search tree that it is exploring:</p>
+<section aria-label="Code block"><pre><code class="nohighlight highlighted">[set()]
+[{'A'}, {'B'}, {'C'}, {'D'}]
+[{'A'}, {'B'}, {'C'}, {'A', 'D'}, {'B', 'D'}, {'C', 'D'}]
+[{'A'}, {'B'}, {'C'}, {'A', 'D'}, {'B', 'D'}, {'A', 'C', 'D'}, {'B', 'C', 'D'}]
+[{'A'}, {'B'}, {'C'}, {'A', 'D'}, {'B', 'D'}, {'A', 'C', 'D'}]
+...
+</code></pre></section>
+<p>For the impossible task with <code>target_duration</code> = 1000, we iterate through 65
+versions of the agenda before failing. It explores all combinations of the four
+songs, some of them multiple times, before failing. Keeping a set of
+already-tested mixtapes that failed (a visited set!) would allow us to reduce this redundancy.</p>
+<p><a class="anchor" name="catsoop_section_6"></a><a class="anchor" name="_sudoku"></a></p><h2 class="cs_section_title">6) Sudoku<a class="cs_permalink" href="#_sudoku">§</a></h2><p></p>
+<p>To study another example that involves search and backtracking, we will build a
+solver for the popular <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> game. Sudoku is the name given to a variant of a
+digit-placement game seen already in French newspapers in the 19th century but
+popularized by a Japanese puzzle company in the 1980s. The goal is to fill
+every cell of a 9x9 board with a digit 1-9 under the following constraints:</p>
+<ul>
+<li>No row may contain any digit more than once.</li>
+<li>No column may contain any digit more than once.</li>
+<li>None of the 3-3 blocks that make up the 9x9 grid may contain any digit more than once.</li>
+</ul>
+<p>Each of these regions holds a permutation of the digits 1 through 9,
+but of course they mutually constrain each other. In addition, some of
+the 81 cells are filled in with particular digits that must remain
+part of the solution. The filled-in squares do not themselves violate
+any of the above constraints, but their choices (how many are filled
+in, in which parts of the grid, and with what digits) determine the
+difficulty of any particular instance of the puzzle.  It has been
+estimated that there are <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>6</mn><mo>×</mo><msup><mn>10</mn><mrow data-mjx-texclass="ORD"><mn>21</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></span> possible valid Sudoku
+grids.  Here is just one example:</p>
+<center>
+<img src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/sudoku.svg">
+</center>
+<p>In this section, we'll walk through a process for designing a program to solve
+Sudoku puzzles.  A fundamental question when starting to think about this
+problem is: "How do we represent the grid?"</p>
+<p>We will begin with a familiar scheme, representing the board as a list of lists
+(i.e., a typical Python two-dimensional array), each grid cell holding an
+assigned digit.  We'll use the digit <code>0</code> to indicate that a cell has not yet
+been filled.  The solution to a Sudoku puzzle is just such a grid but one in
+which no <code>0</code> entries remain and all the constraints are satisfied.</p>
+<p>Such puzzles are typically hard enough that they cannot be solved by inspection
+and require trial-and-error technique using backtracking to solve them.</p>
+<p>Here is the overall strategy we can use:</p>
+<ol>
+<li>Find a <code>0</code> in the board.</li>
+<li>Try to fill it with one of the digits <code>1</code>-<code>9</code>.</li>
+<li>Recursively try to solve that new board; if successful, we have our answer.</li>
+<li>If not, iterate over the other digits.</li>
+<li>If none of the digits work, then this path fails; return <code>None</code>.</li>
+</ol>
+<p>Here is some code that attempts to implement this strategy:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">solve_sudoku</span>(<span class="hljs-params">board</span>):</span>
+    <span class="hljs-string">"""
+    Given a sudoku board (as a list-of-lists of numbers, where 0 represents an
+    empty square), return a solved version of the puzzle.
+    """</span>
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+            <span class="hljs-keyword">if</span> board[row][col] != <span class="hljs-number">0</span>:
+                <span class="hljs-keyword">continue</span>
+            <span class="hljs-comment"># Found a 0; try filling it</span>
+            <span class="hljs-keyword">for</span> trial <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>):
+                new_board = [[trial <span class="hljs-keyword">if</span> (r, c) == (row, col) <span class="hljs-keyword">else</span> board[r][c]
+                              <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>)]
+			     <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>)]
+                <span class="hljs-keyword">if</span> valid_board(new_board):
+                    result = solve_sudoku(new_board)
+                    <span class="hljs-keyword">if</span> result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+                        <span class="hljs-keyword">return</span> result
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+    <span class="hljs-keyword">return</span> board
+</code></pre></section>
+<p>Note that the outer iteration over <code>row</code> and <code>col</code> is used just to find the
+first open spot on the grid, not every open spot. Remaining ones will be filled
+by recursive calls to <code>solve_sudoku</code>. If there aren't any open spots, then we have
+succeeded and return the board.</p>
+<p>Having found an open spot, we copy the existing board but with one of the 1-9
+digits replacing the open spot. We then check if that new board satisfies the
+constraints of Sudoku. If it does, then we recursively try to solve that new
+board. If that works, we succeed and return the solved board. If it fails, we
+move on to a different trial digit. If we've run through all the digits, then
+there is no solution to the current board, so we fail by returning None.</p>
+<p>We do need to implement a utility <code>valid_board</code> to check if the new board
+violates any of the constraints. This is straightforward, using another
+utility, <code>violation</code>, that sees if a list of numbers contains any duplicates
+(other than <code>0</code>).</p>
+<p>Here are some examples to test the program:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">format_sudoku</span>(<span class="hljs-params">board</span>):</span>
+    <span class="hljs-string">"""
+    Format a sudoku board to be printed to the screen
+    """</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> board:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Failed'</span>
+    _divider = <span class="hljs-string">'+'</span>+<span class="hljs-string">''</span>.join(<span class="hljs-string">'-+'</span> <span class="hljs-keyword">if</span> i%<span class="hljs-number">3</span>==<span class="hljs-number">2</span> <span class="hljs-keyword">else</span> <span class="hljs-string">'-'</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>))
+    lines = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+        <span class="hljs-keyword">if</span> i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>:
+            lines.append(_divider)
+        line = <span class="hljs-string">'|'</span>
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+            line += <span class="hljs-string">' '</span> <span class="hljs-keyword">if</span> board[i][j] == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> str(board[i][j])
+            <span class="hljs-keyword">if</span> j % <span class="hljs-number">3</span> == <span class="hljs-number">2</span>:
+                line += <span class="hljs-string">'|'</span>
+        lines.append(line)
+    lines.append(_divider)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'\n'</span>.join(lines)
+
+
+grid1 = [[<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],
+         [<span class="hljs-number">2</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>],
+         [<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]
+
+grid2 = [[<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>],
+         [<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]
+
+grid3 = [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>],  <span class="hljs-comment"># http://www.extremesudoku.info/sudoku.html</span>
+         [<span class="hljs-number">0</span>,<span class="hljs-number">8</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">8</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">8</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>],
+         [<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>],
+         [<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]
+
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">for</span> grid <span class="hljs-keyword">in</span> [grid1, grid2, grid3]:
+    <span class="hljs-built_in">print</span>(format_sudoku(grid))
+    t = time.time()
+    res = solve_sudoku(grid)
+    elapsed = time.time() - t
+    <span class="hljs-keyword">if</span> res:
+        <span class="hljs-built_in">print</span>(format_sudoku(res))
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Failed'</span>)
+    <span class="hljs-built_in">print</span>(elapsed, <span class="hljs-string">'seconds'</span>)
+    <span class="hljs-built_in">print</span>()
+</code></pre></section>
+<p>When run, these produce the following output:</p>
+<section aria-label="Code block"><pre><code class="nohighlight highlighted">+---+---+---+
+|517|6  | 34|
+|289|  4|   |
+|346|2 5| 9 |
++---+---+---+
+|6 2|   | 1 |
+| 38|  6| 47|
+|   |   |   |
++---+---+---+
+| 9 |   | 78|
+|7 3|4  |56 |
+|   |   |   |
++---+---+---+
++---+---+---+
+|517|698|234|
+|289|134|756|
+|346|275|891|
++---+---+---+
+|672|849|315|
+|138|526|947|
+|954|713|682|
++---+---+---+
+|495|362|178|
+|723|481|569|
+|861|957|423|
++---+---+---+
+0.12484216690063477 seconds
+
++---+---+---+
+|517|6  | 34|
+| 89|  4|   |
+|3 6|2 5| 9 |
++---+---+---+
+|6  |   | 1 |
+| 3 |  6| 47|
+|   |   |   |
++---+---+---+
+| 9 |   | 78|
+|7 3|4  |56 |
+|   |   |   |
++---+---+---+
++---+---+---+
+|517|698|234|
+|289|134|756|
+|346|275|891|
++---+---+---+
+|672|849|315|
+|138|526|947|
+|954|713|682|
++---+---+---+
+|495|362|178|
+|723|481|569|
+|861|957|423|
++---+---+---+
+1.297372817993164 seconds
+
++---+---+---+
+|  1|  9|  3|
+| 8 | 2 | 9 |
+|9  |1  |8  |
++---+---+---+
+|1  |5  |4  |
+| 7 | 3 | 5 |
+|  6|  4|  7|
++---+---+---+
+|  8|  5|  6|
+| 3 | 7 | 4 |
+|2  |3  |9  |
++---+---+---+
++---+---+---+
+|641|789|523|
+|385|426|791|
+|927|153|864|
++---+---+---+
+|193|567|482|
+|472|831|659|
+|856|294|317|
++---+---+---+
+|718|945|236|
+|539|672|148|
+|264|318|975|
++---+---+---+
+1.5451231002807617 seconds
+</code></pre></section>
+<p>The exact timings will vary from one computer to the next, of course.</p>
+<p><a class="anchor" name="catsoop_section_6_1"></a><a class="anchor" name="_improving_efficiency"></a></p><h3 class="cs_section_title">6.1) Improving Efficiency<a class="cs_permalink" href="#_improving_efficiency">§</a></h3><p></p>
+<p>Now, with a satisfied smile, we may look over the program and
+rejoice.  However, no program is really ever done, because it is
+(almost) always possible to find improvements.  For example, although
+our program works, it seems inelegant that when we find an empty spot,
+we blindly create boards for all possible digits at that spot and test
+each to see if they are valid. People solving Sudoku puzzles can look
+at an empty spot and immediately see that the possible choices are
+constrained by other digits already on the grid.  For the first example
+above, we found a first empty spot at coordinates <code>(0, 4)</code> (next to the
+<code>6</code> in the first row). By looking at the values already filled in in
+that first row, fifth column, and the <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><mo>×</mo><mn>3</mn></math></mjx-assistive-mml></mjx-container></span> subgrid, we can tell that the
+digit to fill in cannot be any of <code>5</code>, <code>1</code>, <code>7</code>, <code>6</code>, <code>3</code>, <code>4</code>, or <code>2</code>. Thus, we
+should try only the remaining digits, <code>8</code> or <code>9</code>, and avoid trying
+obviously bad choices that will then be rejected by <code>valid_board</code>.</p>
+<p>So let's look at writing a version of this function that implements this
+strategy.  A big part of doing so will involve first determining what numbers
+<em>cannot</em> go in a certain cell.  To this end, we'll define some utility
+functions:</p>
+<ul>
+<li><code>values_in_row(board, r)</code> returns the nonzero integers present in row <code>r</code> in the given board (<code>r=0</code> represents the top-most row).  For example, in the example board above, <code>values_in_row(board, 1)</code> should return some collection containing <code>6</code>, <code>1</code>, <code>9</code>, and <code>5</code>.</li>
+<li><code>values_in_column(board, c)</code> returns the nonzero integers present in column <code>c</code> in the given board (<code>c=0</code> represents the left-most column).  For example, in the example board above, <code>values_in_column(board, 3)</code> should return a collection containing <code>1</code>, <code>8</code>, and <code>4</code>.</li>
+<li><code>values_in_subgrid(board, sr, sc)</code> returns the nonzero integers in the subgrid identified by <code>sr</code> and <code>sc</code>. These are the coordinates of the subgrid in the 3x3 arrangement of subgrids in the overall grid. <code>sr</code> and <code>sc</code> are both in the range 0-2, i.e., <code>range(0, 3)</code>.  <code>(sr=0, sc=0)</code> represents the top-left-most subgrid, and <code>(sr=2, sc=2)</code> represents the bottom-right-most subgrid.  For example, in the example board above, <code>values_in_subgrid(board, 1, 2)</code> should return a collection containing <code>3</code>, <code>1</code>, and <code>6</code>.</li>
+</ul>
+<p>
+<!--START question sudoku_helpers --></p><section aria-label="Question">
+<div class="question question-pythoncode" id="cs_qdiv_sudoku_helpers" style="position: static">
+<div id="sudoku_helpers_rendered_question">
+<div id="catsoop_preamble_sudoku_helpers"></div>
+<div id="catsoop_prompt_sudoku_helpers" style="display: inline;">In the 
+box below, fill in the definitions for these functions.  The return type
+ is up to you, but it must be a collection and it must contain the 
+correct numbers.<br></div>
+<div class="cm-editor ͼ1 ͼ2 ͼ4"><div style="position: fixed; top: -10000px;" aria-live="polite"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 406px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;">1</div><div class="cm-gutterElement" style="height: 14px;">2</div><div class="cm-gutterElement" style="height: 14px;">3</div><div class="cm-gutterElement" style="height: 14px;">4</div><div class="cm-gutterElement" style="height: 14px;">5</div><div class="cm-gutterElement" style="height: 14px;">6</div><div class="cm-gutterElement" style="height: 14px;">7</div><div class="cm-gutterElement" style="height: 14px;">8</div><div class="cm-gutterElement" style="height: 14px;">9</div><div class="cm-gutterElement" style="height: 14px;">10</div><div class="cm-gutterElement" style="height: 14px;">11</div><div class="cm-gutterElement" style="height: 14px;">12</div><div class="cm-gutterElement" style="height: 14px;">13</div><div class="cm-gutterElement" style="height: 14px;">14</div><div class="cm-gutterElement" style="height: 14px;">15</div><div class="cm-gutterElement" style="height: 14px;">16</div><div class="cm-gutterElement" style="height: 14px;">17</div><div class="cm-gutterElement" style="height: 14px;">18</div><div class="cm-gutterElement" style="height: 14px;">19</div><div class="cm-gutterElement" style="height: 14px;">20</div><div class="cm-gutterElement" style="height: 14px;">21</div><div class="cm-gutterElement" style="height: 14px;">22</div><div class="cm-gutterElement" style="height: 14px;">23</div><div class="cm-gutterElement" style="height: 14px;">24</div><div class="cm-gutterElement" style="height: 14px;">25</div><div class="cm-gutterElement" style="height: 14px;">26</div><div class="cm-gutterElement" style="height: 14px;">27</div><div class="cm-gutterElement" style="height: 14px;">28</div><div class="cm-gutterElement" style="height: 14px;">29</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 28px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 42px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 42px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 70px;"><span title="Fold line">⌄</span></div></div></div><div style="tab-size: 4" spellcheck="false" autocorrect="off" autocapitalize="none" translate="no" contenteditable="true" class="cm-content" role="textbox" aria-multiline="true" data-language="python" aria-autocomplete="list"><div class="cm-activeLine cm-line"><span class="ͼb">def</span> <span class="ͼg">values_in_row</span>(board, r):</div><div class="cm-line">    row = board[r]</div><div class="cm-line">    out = set()</div><div class="cm-line">    <span class="ͼb">for</span> val <span class="ͼb">in</span> row:</div><div class="cm-line">        <span class="ͼb">if</span> val &gt; <span class="ͼd">0</span>:</div><div class="cm-line">            out |= {val}</div><div class="cm-line">    <span class="ͼb">return</span> out</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼb">def</span> <span class="ͼg">values_in_column</span>(board, c):</div><div class="cm-line">    out = set()</div><div class="cm-line">    <span class="ͼb">for</span> ir, row <span class="ͼb">in</span> enumerate(board):</div><div class="cm-line">        val = row[c]</div><div class="cm-line">        <span class="ͼb">if</span> val &gt; <span class="ͼd">0</span>: </div><div class="cm-line">            out |= {val}</div><div class="cm-line">    <span class="ͼb">return</span> out</div><div class="cm-line">    </div><div class="cm-line"><span class="ͼb">def</span> <span class="ͼg">values_in_subgrid</span>(board, sr, sc):</div><div class="cm-line">    out = set()</div><div class="cm-line">    <span class="ͼb">for</span> ir <span class="ͼb">in</span> range(<span class="ͼd">0</span>,<span class="ͼd">3</span>):</div><div class="cm-line">        <span class="ͼb">for</span> ic <span class="ͼb">in</span> range(<span class="ͼd">0</span>,<span class="ͼd">3</span>):</div><div class="cm-line">            nir = ir + sr*<span class="ͼd">3</span></div><div class="cm-line">            nic = ic + sc*<span class="ͼd">3</span></div><div class="cm-line">            print(nir, nic)</div><div class="cm-line">            val = board[nir][nic]</div><div class="cm-line">            print(val)</div><div class="cm-line">            <span class="ͼb">if</span> val &gt; <span class="ͼd">0</span>:</div><div class="cm-line">                out |= {val}</div><div class="cm-line">    <span class="ͼb">return</span> out</div><div class="cm-line">    </div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 43px; top: 5.58398px; height: 17px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div></div></div><textarea id="sudoku_helpers" name="sudoku_helpers" style="display: none;">def values_in_row(board, r):
+    row = board[r]
+    out = set()
+    for val in row:
+        if val &gt; 0:
+            out |= {val}
+    return out
+
+def values_in_column(board, c):
+    out = set()
+    for ir, row in enumerate(board):
+        val = row[c]
+        if val &gt; 0: 
+            out |= {val}
+    return out
+    
+def values_in_subgrid(board, sr, sc):
+    out = set()
+    for ir in range(0,3):
+        for ic in range(0,3):
+            nir = ir + sr*3
+            nic = ic + sc*3
+            print(nir, nic)
+            val = board[nir][nic]
+            print(val)
+            if val &gt; 0:
+                out |= {val}
+    return out
+    </textarea>
+<script type="text/javascript">
+var cs_codemirror_sudoku_helpers = catsoop.codemirror.editorFromTextArea(document.getElementById('sudoku_helpers'), 'python');
+</script>
+</div><div>
+<span id="sudoku_helpers_buttons">
+<button class="submit btn btn-catsoop" id="sudoku_helpers_submit" onclick="catsoop.submit('sudoku_helpers');" style="margin-top: 10px;">Submit</button>
+<button class="clearanswer btn btn-catsoop" id="sudoku_helpers_clearanswer" onclick="catsoop.clearanswer('sudoku_helpers');" style="margin-top: 10px;">Clear Answer</button></span>
+<span id="sudoku_helpers_loading_wrapper" role="status">
+<span id="sudoku_helpers_loading" style="display:none;"><img class="catsoop-darkmode-invert" src="data:image/gif;base64,R0lGODlhEAAQAPIGAMLCwkJCQgAAAGJiYoKCgpKSkv///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAGACwAAAAAEAAQAAADMmi63P4wyklrAyEAGoQInAdOmGYBw7AxwLoMGcG2rkHEQFHQLTsQOd2mB9ERCpTWzpEAACH5BAkKAAYALAAAAgAKAA4AAAMraAYRoNAEIUJUs97VHgTD4EVDQ2xEM2wgMV5AUbyKLKNEvoxA3P8sYNCQAAAh+QQJCgAGACwAAAAACgAOAAADLWi6EAFrBSGCAmQ0as1wROFABuEM0TUQ5FUU7fK+aRkWNYDFqV4bOl8v+BMuEgAh+QQJCgAGACwAAAAADgAKAAADKmi6QAMrrhECkaaVVl+FRiFuAwEEghAoYxGhqgI0oPxlNSbPOcb3PqAkAQAh+QQJCgAGACwCAAAADgAKAAADKWhqUAUrLuekApA+MiDD4BYExAVGwzgsmNR0lgWMXmwEghDYCq7zDFoCACH5BAkKAAYALAYAAAAKAA4AAAMqaADWros9GEuRUBE7jeUTYGEhMZANEQREN6xDJ54PsKJGIAhBp/OyWyMBACH5BAkKAAYALAYAAgAKAA4AAAMpaKoA+609Fie1C5Tipt7WRhRWw0ED0T1DEAyMq7mEEghCAKTdnZcySwIAIfkEBQoABgAsAgAGAA4ACgAAAytoumwALb4X2YR1URACVkBRYIEgBIw4KuUJDERIzGD3doMhfguBZyAYT5EAADs="><span class="screenreader-only-clip">Loading...</span></span>
+</span>
+<span id="sudoku_helpers_score_display" role="status"></span>
+<div class="nsubmits_left" id="sudoku_helpers_nsubmits_left" role="status">You have submitted this assignment 10 times.</div></div>
+<div class="solution" id="sudoku_helpers_solution_container">
+<div id="sudoku_helpers_solution">
+Here is the solution we wrote:<br>
+<section aria-label="Code block"><pre><code class="lang-python hljs highlighted" id="sudoku_helpers_soln_highlight">
+<span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">values_in_row</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">board, r</span></span></span><span class="hljs-function">):</span></span>
+    <span class="hljs-string"><span class="hljs-string">"""
+    Return a set containing all of the values in a given row.
+    """</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> set(board[r]) - {<span class="hljs-number"><span class="hljs-number">0</span></span>}
+
+
+<span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">values_in_column</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">board, c</span></span></span><span class="hljs-function">):</span></span>
+    <span class="hljs-string"><span class="hljs-string">"""
+    Return a set containing all of the values in a given column.
+    """</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> {board[r][c] <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> r <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> range(len(board))} - {<span class="hljs-number"><span class="hljs-number">0</span></span>}
+
+
+<span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">values_in_subgrid</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">board, sr, sc</span></span></span><span class="hljs-function">):</span></span>
+    <span class="hljs-string"><span class="hljs-string">"""
+    Return a set containing all of the values in a given subgrid.
+    """</span></span>
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> {board[r][c]
+            <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> r <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> range(sr*<span class="hljs-number"><span class="hljs-number">3</span></span>, (sr+<span class="hljs-number"><span class="hljs-number">1</span></span>)*<span class="hljs-number"><span class="hljs-number">3</span></span>)
+            <span class="hljs-keyword"><span class="hljs-keyword">for</span></span> c <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> range(sc*<span class="hljs-number"><span class="hljs-number">3</span></span>, (sc+<span class="hljs-number"><span class="hljs-number">1</span></span>)*<span class="hljs-number"><span class="hljs-number">3</span></span>)} - {<span class="hljs-number"><span class="hljs-number">0</span></span>}
+</code></pre></section>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+hljs.highlightBlock(document.getElementById("sudoku_helpers_soln_highlight"));
+// @license-end
+</script>
+</div>
+<div id="sudoku_helpers_solution_explanation">
+</div>
+</div>
+<div aria-atomic="true" id="sudoku_helpers_message" role="status">
+<br>&nbsp;Your score on your most recent submission was: 100.00%<img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg==">
+<br><details><summary class="btn btn-catsoop">Show/Hide Detailed Results</summary><div class="response" id="sudoku_helpers_result_showhide"><h2>Test Results:</h2>
+<center><h3>Test 01</h3>
+<i></i></center><p></p>
+The test case was:<br>
+<p><tt>#Your Code Here<br><br>grid  = [[5,1,7,6,0,0,0,3,4],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,8,9,0,0,4,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3,0,6,2,0,5,0,9,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6,0,0,0,0,0,0,1,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,3,0,0,0,6,0,4,7],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,9,0,0,0,0,0,7,8],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7,0,3,4,0,0,5,6,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0]]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>ans = set(values_in_row(grid, 8))</tt></p><p>&nbsp;</p>
+<p>Our solution produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">set()</tt></font></p><p>&nbsp;</p>
+<p>Your submission produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">set()</tt></font><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></p>
+<p></p><hr><p></p>
+<center><h3>Test 02</h3>
+<i></i></center><p></p>
+The test case was:<br>
+<p><tt>#Your Code Here<br><br>grid  = [[5,1,7,6,0,0,0,3,4],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,8,9,0,0,4,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3,0,6,2,0,5,0,9,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6,0,0,0,0,0,0,1,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,3,0,0,0,6,0,4,7],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,9,0,0,0,0,0,7,8],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7,0,3,4,0,0,5,6,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0]]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>ans = set(values_in_column(grid, 8))</tt></p><p>&nbsp;</p>
+<p>Our solution produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">{8, 4, 7}</tt></font></p><p>&nbsp;</p>
+<p>Your submission produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">{8, 4, 7}</tt></font><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></p>
+<p></p><hr><p></p>
+<center><h3>Test 03</h3>
+<i></i></center><p></p>
+The test case was:<br>
+<p><tt>#Your Code Here<br><br>grid  = [[5,1,7,6,0,0,0,3,4],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,8,9,0,0,4,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3,0,6,2,0,5,0,9,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6,0,0,0,0,0,0,1,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,3,0,0,0,6,0,4,7],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,9,0,0,0,0,0,7,8],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7,0,3,4,0,0,5,6,0],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,0,0,0,0,0,0,0]]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>ans = set(values_in_subgrid(grid, 0, 1))</tt></p><p>&nbsp;</p>
+<p>Our solution produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">{2, 4, 5, 6}</tt></font></p><p>&nbsp;</p>
+<p>Your submission produced the following value for <tt>ans</tt>:
+<br><font color="blue"><tt style="white-space: pre-wrap">{2, 4, 5, 6}</tt></font><img alt="Correct" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAABQVBMVEUAAAAGDQAAAAAAAAAAAAAAAAAAAACGqlBIfBNciiZGeg9Eeg5Feg5Gew9CdgpCdgxDehJvmDN1nj9plTVWhRtOgRlMfxZjkS5Geg9EeA5Geg5HfBBHew5GeQ5Cdg1CeAxDegtHgACVtmV+pURPgBp4oEBEeQx+o0p8oklFeg5YiCJIfRFEdQ5GehBHeg9CdwtEdQxEeg5Fdw5DeQ1Eegs2YQlCdwpCeAxDeQ0PHgBGdA9AdgkAAAAAAAARIgChwGKPs0qjwXKStUyFqD6CqDfJ3p+91Ji00XqlwmypyGihwGiauluWtlicwFKXulGTuEmMr0WOs0OKr0CGrDuEqjrR46zC2Ji+1ZC804640oK1z4CxzHywynqsx3enw3WYuWidvF+fwlqgxFePsFWSs1KIrE2Wu0uOr0qGqkeCpj50nDHRgoCJAAAAP3RSTlMABA0HEgoQ/ff17+jbxi8nDvz39vb29fTy7dPQoJeLVRUJ/f39+vn49/f118jAvrKWcW9jWllJQjkiIRwZFg8RajNxAAAA+klEQVQY06XQ1bLCMBAGYNJCHXfnuLtrFXc5gru+/wMQhhZouWRvMvNt/kx2dbvUC+V/3tY9OhZzX5i0HDqNxn/aRo2aXb/JXtR+p2HjfjUb5xmg1kfyL9v9d76q1UK1kqPaSWAFy1TQVs+zvCci4wd9fA8PE9HM5Rvkg5JlcJ68iuh8OFtkcb/ywrUtlUscUTfniaKQIlaj0AdsoZTuH2aEUsceXM/AuNNcmcsIZW7otWwsIuCacBVJqgycYdWPwx7rWJQKVu0y3n0OUZyemVUIAPp9S8wcIQRBDCgAsqIGBNM/eS/fPr/02KKx5IXDBixsfV2OwCYERebVjyGAvqhE3QAAAABJRU5ErkJggg=="></p>
+<p>Your code produced the following output:<br></p><pre>0 3<br>6<br>0 4<br>0<br>0 5<br>0<br>1 3<br>0<br>1 4<br>0<br>1 5<br>4<br>2 3<br>2<br>2 4<br>...OUTPUT TRUNCATED...</pre><p></p>
+</div></details></div>
+</div>
+</section>
+<!--END question sudoku_helpers -->
+<p></p>
+<p>With these helpers in hand, we can figure out which values are allowed for
+a given grid and only try those values.  This avoids the need to write the
+function that checks for a board's validity, which simplifies the code
+dramatically.</p>
+<p>Instead, we define <code>valid_moves</code> to compute what digits are valid at that spot
+based on the same constraints that <code>valid_board</code> had used, but in a much simpler
+way:</p>
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">solve_sudoku</span>(<span class="hljs-params">board</span>):</span>
+    <span class="hljs-string">"""
+    Given a sudoku board (as a list-of-lists of numbers, where 0 represents an
+    empty square), return a solved version of the puzzle.
+    """</span>
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):
+            <span class="hljs-keyword">if</span> board[row][col] != <span class="hljs-number">0</span>:
+                <span class="hljs-keyword">continue</span>
+            <span class="hljs-comment"># Found a 0; try filling it</span>
+            <span class="hljs-keyword">for</span> trial <span class="hljs-keyword">in</span> valid_moves(board, row, col):
+                new_board = [[trial <span class="hljs-keyword">if</span> (r, c) == (row, col) <span class="hljs-keyword">else</span> board[r][c] <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>)]
+                              <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>)]
+                <span class="hljs-comment"># no need to check for victory; new_board is valid by construction!</span>
+                result = solve_sudoku(new_board)
+                <span class="hljs-keyword">if</span> result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+                    <span class="hljs-keyword">return</span> result
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+    <span class="hljs-keyword">return</span> board
+</code></pre></section>
+<div class="question"><b>Check Yourself:</b><p></p><p>This code relies on a function called <code>valid_moves</code> to tell us what numbers can
+go in a given spot.  Using your functions from above, how should that function look?</p>
+<div class="response"><button aria-pressed="false" class="btn btn-catsoop showhide-toggle" onclick='this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");' role="button">Show/Hide</button><div>Here is one possible solution, assuming that the helpers above are returning sets:
+<section aria-label="Code block"><pre><code class="language-py hljs python highlighted"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">valid_moves</span>(<span class="hljs-params">board, row, col</span>):</span>
+    <span class="hljs-keyword">return</span> (
+        set(range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))  <span class="hljs-comment"># all possible moves</span>
+        - values_in_row(board, row)  <span class="hljs-comment"># exclude values already in the row</span>
+        - values_in_column(board, col)  <span class="hljs-comment"># exclude values already in the column</span>
+        - values_in_subgrid(board, row//<span class="hljs-number">3</span>, col//<span class="hljs-number">3</span>)  <span class="hljs-comment"># exclude values already in the subgrid</span>
+    )
+</code></pre></section>
+<p>Of course, it's possible to make this work even if you chose a different type to
+return from your helper functions; but the choice of sets here really puts us in
+a good position to write <code>valid_moves</code> in a very concise way by using the built in
+<code>-</code> operation on sets (which implements a <a href="https://docs.python.org/3/library/stdtypes.html#frozenset.difference">"set difference"</a>).</p></div></div>
+<p></p><p><span id="queue_checkyourself_7"></span></p></div>
+<p>Although the resulting solutions differ a bit from what we had earlier, this is
+understandable.  Iterating over a set likely puts digits in a different order
+than when we iterated over a range. Because these puzzles often have multiple
+valid solutions, that ordering can affect which solution we find.
+Nevertheless, in all three examples, the running time of this improved version
+is more than an order of magnitude less than of the original.  And, not only is this
+solution more efficient than what we saw earlier, arguably an even bigger benefit is
+that it is simpler and more concise as well!</p>
+<p><a class="anchor" name="catsoop_section_6_2"></a><a class="anchor" name="_improving_efficiency_mutation"></a></p><h3 class="cs_section_title">6.2) Improving Efficiency: Mutation<a class="cs_permalink" href="#_improving_efficiency_mutation">§</a></h3><p></p>
+<p>Following up the "no program is really ever done" theme, you might be troubled
+by all the boards we are still copying (though fewer than before). Could we
+instead reuse the same board over and over, mutating its values as needed? The
+answer is "yes", though one should undertake such an approach with great
+caution. Mutating data structures is fraught with opportunities for
+aliasing-related bugs, and such errors are often extremely difficult to debug.
+Nevertheless, we proceed!</p>
+<p>Instead of constructing <code>new_board</code>, we will just modify <code>board</code>, but then we have
+to remember to "unmodify" it if filling in none of the trial values lead to
+success.</p>
+<section aria-label="Code block"><button role="button" aria-pressed="true" class="catsoop-code-showhide">Show/Hide Line Numbers</button><pre style="padding-left: 0px !important;"><code class="language-py hljs python highlighted"><div class="catsoop-code-display hljs-ln"><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="1">1</span><span class="hljs-ln-line hljs-ln-code" data-line-number="1"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">solve_sudoku</span>(<span class="hljs-params">board</span>):</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="2">2</span><span class="hljs-ln-line hljs-ln-code" data-line-number="2">    <span class="hljs-string"><span class="hljs-string">"""</span></span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="3">3</span><span class="hljs-ln-line hljs-ln-code" data-line-number="3"><span class="hljs-string">    Given a sudoku board (as a list-of-lists of numbers, where 0 represents an</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="4">4</span><span class="hljs-ln-line hljs-ln-code" data-line-number="4"><span class="hljs-string">    empty square), return a solved version of the puzzle.</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="5">5</span><span class="hljs-ln-line hljs-ln-code" data-line-number="5"><span class="hljs-string">    """</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="6">6</span><span class="hljs-ln-line hljs-ln-code" data-line-number="6">    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="7">7</span><span class="hljs-ln-line hljs-ln-code" data-line-number="7">        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(<span class="hljs-number">9</span>):</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="8">8</span><span class="hljs-ln-line hljs-ln-code" data-line-number="8">            <span class="hljs-keyword">if</span> board[row][col] != <span class="hljs-number">0</span>:</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="9">9</span><span class="hljs-ln-line hljs-ln-code" data-line-number="9">                <span class="hljs-keyword">continue</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="10">10</span><span class="hljs-ln-line hljs-ln-code" data-line-number="10">            <span class="hljs-comment"># Found a 0; try filling it</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="11">11</span><span class="hljs-ln-line hljs-ln-code" data-line-number="11">            <span class="hljs-keyword">for</span> trial <span class="hljs-keyword">in</span> valid_moves(board, row, col):</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="12">12</span><span class="hljs-ln-line hljs-ln-code" data-line-number="12">                board[row][col] = trial</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="13">13</span><span class="hljs-ln-line hljs-ln-code" data-line-number="13">                result = solve_sudoku(board)</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="14">14</span><span class="hljs-ln-line hljs-ln-code" data-line-number="14">                <span class="hljs-keyword">if</span> result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="15">15</span><span class="hljs-ln-line hljs-ln-code" data-line-number="15">                    <span class="hljs-keyword">return</span> result</span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="16">16</span><span class="hljs-ln-line hljs-ln-code" data-line-number="16">            board[row][col] = <span class="hljs-number">0</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="17">17</span><span class="hljs-ln-line hljs-ln-code" data-line-number="17">            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span></span></div><div class="catsoop-code-line"><span class="hljs-ln-line hljs-ln-numbers" data-line-number="18">18</span><span class="hljs-ln-line hljs-ln-code" data-line-number="18">    <span class="hljs-keyword">return</span> board</span></div></div></code></pre></section>
+<p>This looks similar to our code from above, but line 12 mutates <code>board</code> instead
+of making a new board, and we have a new addition.  Line 16 is not equivalent
+to anything from our earlier code; why is it even there?</p>
+<p>This is a subtle point, but that line is <em>critical</em>.  The high-level idea is
+that, each step along the way, we replace a <code>0</code> from the original board with
+some new number <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>.  Then, recursive calls that we make (and <em>their</em> recursive
+calls and so on, all of which share the same <code>board</code>) assume that <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is
+necessarily in that spot!  If we eventually decide that there is no solution
+from that recursive call, we need to make sure to <em>undo</em> our action of putting
+<span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> in that spot (so that other recursive calls no longer assume that <span class=""><mjx-container class="MathJax" jax="CHTML" style="font-size: 119.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> must
+be in that spot).  Without setting that value back to <code>0</code>, we would get
+incorrect results (often, our code would indicate that there is no solution,
+even for boards that <em>can</em> be solved).</p>
+<p>Again, there's a lot of danger here.  So why bother?  Well, in many cases, we
+might actually recommend <em>not</em> bothering, since the version that only uses
+immutable data types is generally much safer.  But one reason that we might
+risk those dangers is that we get another substantial speed improvement by
+avoiding the repeated copying of our game board: in this case, around 3x!</p>
+<p>Here is a table summarizing timing on our three examples with our original
+solution, the <code>valid_moves</code> change, and the mutating method:</p>
+<center>
+<table border="1">
+<tbody><tr><th></th><th>Original Code</th><th>Only Valid Moves</th><th>Mutate Instead of Copy</th></tr>
+<tr><td align="center"><code>grid1</code></td><td align="center">0.125</td><td align="center">0.014</td><td align="center">0.004</td></tr>
+<tr><td align="center"><code>grid2</code></td><td align="center">1.297</td><td align="center">0.123</td><td align="center">0.044</td></tr>
+<tr><td align="center"><code>grid3</code></td><td align="center">1.545</td><td align="center">0.149</td><td align="center">0.050</td></tr>
+</tbody></table>
+</center>
+<p><a class="anchor" name="catsoop_section_7"></a><a class="anchor" name="_summary"></a></p><h2 class="cs_section_title">7) Summary<a class="cs_permalink" href="#_summary">§</a></h2><p></p>
+<p>In this reading, our focus has been on a particular kind of recursive structure
+that we refer to as <em>backtracking</em>.  This kind of structure typically contains a few
+pieces:</p>
+<ul>
+<li>A base case signifying a trivial "success."</li>
+<li>A base case signifying a "failure."</li>
+<li>Recursive case(s) that distinguish between those cases to try different possibilities
+for one small part of a subproblem (e.g., adding a single song to the mixtape or placing
+a single number in Sudoku).  If that change leads to a failure in a recursive call, we
+try the next possibility; and only when all possibilities have failed do we signal failure.</li>
+</ul>
+<p>We saw this approach applied to two different problems in this reading, and we
+saw that it is actually implementing a depth-first search, with Python's normal
+mechanism for keeping track of stack frames serving the role that the "agenda"
+served in our iterative graph-search programs.
+<script type="text/javascript">
+        if (MathJax) {
+            // Disable the MathJax right-click menu,
+            // so that screenreader doesn't say "clickable" on every math element
+            // Based on https://docs.mathjax.org/en/latest/web/configuration.html#configuring-mathjax-after-it-is-loaded
+            MathJax.config.options = MathJax.config.options ?? {};
+            MathJax.config.options.enableMenu = false;
+            MathJax.startup.getComponents();
+        }
+
+
+        // give the hamburger menu icon an accessible label
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("a.icon")?.setAttribute('aria-label', 'site-menu');
+        });
+        
+        // based on catsoop.modal
+        catsoop.vprof_survey = function (header, text, vprof_link, link_timestamp) {
+          return new Promise(function (resolve, reject) {
+            var response = {
+            "response": null,
+            "vprof_link": vprof_link,
+            "link_timestamp": link_timestamp,
+            "response_timestamp": null,
+            "make_modal_timestamp": Date.now(),
+            };
+            var content = document.createElement("dialog");
+            content.classList = ["catsoop-modal-content"];
+            content.setAttribute("aria-labelledby", "catsoop-dialog-header");
+            content.setAttribute("aria-describedby", "catsoop-dialog-body");
+            content.addEventListener("keydown", function (e) {
+              // this piece traps focus in the dialog while it is open
+              // based on https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
+              if (!content.open) {
+                return;
+              }
+              if (e.key === "Tab" || e.keyCode === 9) {
+                if (e.shiftKey) {
+                  if (document.activeElement === content.focusable[0]) {
+                    content.focusable[content.focusable.length - 1].focus();
+                    e.preventDefault();
+                  }
+                } else if (
+                  document.activeElement ===
+                  content.focusable[content.focusable.length - 1]
+                ) {
+                  content.focusable[0].focus();
+                  e.preventDefault();
+                }
+              }
+            });
+            content.focusable = [];
+
+            var mbody = document.createElement("div");
+            mbody.classList = ["catsoop-modal-body"];
+
+            var close_button = document.createElement("button");
+            close_button.classList = ["catsoop-modal-close"];
+            close_button.innerHTML = "&times;";
+            close_button.setAttribute("aria-label", "Close");
+            close_button.onclick = function () {
+              content.close(JSON.stringify(Object.assign(response, {"response": "cancel", "response_timestamp": Date.now()})));
+            };
+            content.focusable.push(close_button);
+            mbody.append(close_button);
+
+            var title = document.createElement("span");
+            title.id = "catsoop-dialog-header";
+            title.classList = ["catsoop-modal-header"];
+            title.appendChild(document.createTextNode(header));
+            title.setAttribute("role", "heading");
+            mbody.appendChild(title);
+
+            var body = document.createElement("p");
+            body.id = "catsoop-dialog-body";
+            body.innerHTML = text + "<br/>";
+            mbody.appendChild(body);
+
+            var buttons = document.createElement("span");
+            var yes_button = document.createElement("button");
+            yes_button.innerText = "Yes";
+            yes_button.classList = ["btn btn-catsoop"];
+            yes_button.addEventListener("click", function () {
+              content.close(JSON.stringify(Object.assign(response, {"response": "yes", "response_timestamp": Date.now()})));
+            });
+            yes_button.setAttribute("autofocus", true);
+            content.focusable.push(yes_button);
+
+
+            var no_button = document.createElement("button");
+            no_button.innerText = "No";
+            no_button.classList = ["btn btn-catsoop"];
+            no_button.addEventListener("click", function () {
+              content.close(JSON.stringify(Object.assign(response, {"response": "no", "response_timestamp": Date.now()})));
+            });
+            content.focusable.push(no_button);
+
+            buttons.appendChild(yes_button);
+            buttons.appendChild(document.createTextNode(" "));
+            buttons.appendChild(no_button);
+            mbody.appendChild(buttons);
+
+            content.addEventListener("close", function () {
+              content.remove();
+              last_clicked_vprof_report[0] = null;
+              last_clicked_vprof_report[1] = null;
+              showing_vprof_survey[0] = false;
+              (content.returnValue === "" ? reject : resolve)(content.returnValue);
+            });
+
+            content.appendChild(mbody);
+            document.body.appendChild(content);
+            content.showModal();
+          });
+        };
+
+
+        function postVprofSurveyResponse(value){
+            var data = JSON.parse(value);
+            var encoded_form_pairs = [];
+            for (var name in data){
+                encoded_form_pairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+            }
+            //console.log("data", data)
+            var form = encoded_form_pairs.join('&').replace(/%20/g, '+');
+            //console.log("form data", form);
+
+            var request = new XMLHttpRequest();
+            request.onload = function(){
+                var msg = request.response;
+                var data = JSON.parse(msg);
+                //if(data.ok){
+                //    console.log("post success")
+                //}else{
+                //    concole.log("post error", msg, JSON.stringify(data))
+                //}
+            }
+
+            request.open('POST', "https://py.mit.edu/spring25/staffonly/analytics/vprof_survey_collector", true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            request.send(form);
+
+        }
+
+        var showing_vprof_survey = [false];
+        var last_clicked_vprof_report = [null, null];
+
+        document.addEventListener('visibilitychange', e=>{
+          if (document.visibilityState === 'visible' &&
+              last_clicked_vprof_report[0] !== null &&
+              !showing_vprof_survey[0]) {
+              // show vorif yes/no survey
+              catsoop.vprof_survey("vprof survey",
+                "Did <a href='" + last_clicked_vprof_report[0] + "' target='_blank'> this vprof report</a> help you find and/or fix an efficiency bug?",
+                last_clicked_vprof_report[0], last_clicked_vprof_report[1]).then(postVprofSurveyResponse, postVprofSurveyResponse);
+              showing_vprof_survey[0] = true;
+            }
+        })
+
+        var vprof_links  = document.getElementsByClassName("vprof_link");
+        for (var i=0; i < vprof_links.length; i++) {
+            let my_link = vprof_links[i].href
+            if ((typeof my_link === 'string' || my_link instanceof String) && !my_link.includes("#")) {
+                vprof_links[i].href = my_link + '#78111110101-50b7ffceb795e65fe8dba48b66ad8351b38526a56061272e905a62a2839c2975';
+            }
+            vprof_links[i].onclick = function(){
+              last_clicked_vprof_report[0] = this.href;
+              last_clicked_vprof_report[1] = Date.now();
+            }
+        }
+
+
+    </script>
+<script type="text/javascript">
+catsoop.callbacks['submit'] = function(ok, names, status, response){
+    response = JSON.parse(response);
+    if (response[names[0]].score == 1){
+        document.getElementById(names[0] + '_viewanswer').click();
+    }
+}
+</script></p>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
+catsoop.all_questions = ['first_error_decoding', 'failure_base_case_return', 'truthiness_bug', 'so_far_return', 'bfs_dfs', 'sudoku_helpers'];
+catsoop.username = 'tjampa';
+catsoop.this_path = 'https://py.mit.edu/spring25/readings/backtracking';
+catsoop.path_info = ['spring25', 'readings', 'backtracking'];
+catsoop.course = 'spring25';
+catsoop.url_root = 'https://py.mit.edu';
+catsoop.imp = '';
+catsoop.skip_alert = ["first_error_decoding", "failure_base_case_return", "truthiness_bug", "so_far_return", "bfs_dfs", "sudoku_helpers"];
+catsoop.viewans_confirm = "Are you sure?  Viewing the answer will prevent any further submissions to this question.  Press 'OK' to view the answer, or press 'Cancel' if you have changed your mind.";
+
+// @license-end</script>
+<div id="cs_footnotes" style="display:none;"></div>
+</div>
+</div>
+<div class="cs_right_menu"></div>
+</div>
+<footer>
+<nav aria-label="Breadcrumbs" class="cs_navigation cs_bottom_navigation" id="cs_bottom_navigation"><li><a href="https://py.mit.edu/spring25">Home</a></li><li><a href="https://py.mit.edu/spring25/readings">Course Readings</a></li><li><a href="https://py.mit.edu/spring25/readings/backtracking">Backtracking</a></li></nav>
+<div class="cs_footer">
+      This page was last updated on Wednesday March 26, 2025 at 02:18:00 PM (revision <code>bf1c13b8</code>).<br>&nbsp;<br>
+<center><img src="Backtracking%20_%20Course%20Readings%20_%206.101%20Spring%202025_files/cc-by-sa.svg" style="width: 2cm;"></center><div style="max-width: 600px; margin-bottom:1em; margin-left:auto; margin-right:auto;">Except where otherwise noted, these readings are licensed under a<br><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank">Creative Commons&nbsp;BY-SA&nbsp;4.0</a> license.  Portions of the readings were derived from<br>or inspired by the <a href="https://web.mit.edu/6.031/www/sp25/" target="_blank">6.031 Course Notes</a>, the <a href="https://hz.mit.edu/catsoop/6.145" target="_blank">6.145 Course Notes</a>, and the 6.01 Course Notes.
+</div>
+<pre class="catsooplogo" style="font-size:50%;">\            
+/    /\__/\  
+\__=(  o_O )=
+(__________) 
+ |_ |_ |_ |_ </pre>
+      Powered by <a href="https://catsoop.org/" target="_blank">CAT-SOOP</a> v19.0.6+hg.14.f36ce1d1 "Korat" (LTS) (development snapshot).<br>
+      CAT-SOOP is <a href="https://www.fsf.org/about/what-is-free-software" target="_blank">Free/Libre Software</a>, available under the terms<br>of the <a href="https://py.mit.edu/_util/license" target="_blank">GNU Affero General Public License, version 3</a>.<br>
+<a download="" href="https://py.mit.edu/_util/source.zip" target="_blank">Download Source Code</a><br>
+<a href="https://py.mit.edu/_util/jslicense.html" rel="jslicense" target="_blank">Javascript License Information</a>
+</div>
+</footer>
+
+
+
+</body></html>

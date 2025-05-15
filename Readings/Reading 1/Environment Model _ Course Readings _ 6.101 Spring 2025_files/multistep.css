@@ -1,0 +1,50 @@
+.multistep.buttons-enabled {
+    min-height: max-content !important;
+    display: grid;
+}
+
+.multistep .step {
+    border-top: 1px dashed black;
+    padding-top: 20px;
+    clear: both;
+}
+
+@media screen {
+    .multistep.buttons-enabled .step {
+        border-top: none;
+        padding-top: inherit;    
+        grid-area: 2/1/2/1;
+        visibility: hidden;
+    }
+
+    .multistep.buttons-enabled .step.active {
+        visibility: visible;
+    }
+}
+
+.multistep-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.step-label {
+    font-weight: bold;
+}
+
+.multistep img {
+    text-align: center;
+}
+
+/* when multistep is side-by-side with the code it's stepping through */
+.multistep[data-side-by-side-code] {
+    float: right;
+    width: 70%;
+    position: relative; 
+    z-index: 1;
+}
+
+/* for images, when you want the text to wrap around it */
+.multistep .wrap-around {
+    float: left;
+    margin:10px;
+}

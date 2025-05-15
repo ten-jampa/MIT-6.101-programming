@@ -1,0 +1,14 @@
+﻿ORIG_STATE,DEST_STATE,COMMODITY,MODE,VALUE
+MA,CA,Grains,Truck,47097
+MA,ND,Wood,Truck,12781
+ND,MA,Grains,Truck,12087
+WY,ND,Fuels,Rail,128633
+ND,SC,Grains,Truck,1456
+SC,MT,Wood,Air,41
+MA,MA,Wood,Truck,10606
+MT,WY,Fuels,Truck,584
+CA,MA,Grains,Truck,16463
+CA,ND,Grains,Truck,12462
+ND,CA,Wood,Truck,23
+MT,ND,Grains,Truck,23690
+CA,MA,Wood,Truck,1181
